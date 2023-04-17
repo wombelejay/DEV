@@ -1,0 +1,49 @@
+cat > config2.yaml << EOF
+Region: ${REGION}
+Image:
+  Os: alinux2
+SharedStorage:
+  - MountDir: /shared
+    Name: default-ebs
+    StorageType: Ebs
+HeadNode:
+  InstanceType: c5.xlarge
+  Networking:
+    SubnetId: ${SUBNET_ID}
+    ElasticIp: false
+  Ssh:
+    KeyName: lab-13-key
+  Iam:
+    AdditionalIamPolicies:
+      - Policy: arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+    S3Access:
+      - BucketName: bucket-${BUCKET_POSTFIX}
+Scheduling:
+  Scheduler: slurm
+  SlurmQueues:
+    - Name: compute
+      Iam:
+        AdditionalIamPolicies:
+          - Policy: arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+        S3Access:
+          - BucketName: bucket-${BUCKET_POSTFIX}
+      CapacityType: ONDEMAND
+      ComputeResources:
+        - Name: compute
+          InstanceType: c5.xlarge
+          MinCount: 0
+          MaxCount: 8
+          DisableSimultaneousMultithreading: true
+      CustomActions:
+        OnNodeConfigured:
+          Script: s3://bucket-${BUCKET_POSTFIX}/containersetup.sh
+      Networking:
+        SubnetIds:
+          - ${SUBNET_ID}
+        PlacementGroup:
+          Enabled: true
+      ComputeSettings:
+        LocalStorage:
+          RootVolume:
+            Size: 50   
+EOF

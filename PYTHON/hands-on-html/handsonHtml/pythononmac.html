@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.3. Some Special Mac Instructions &mdash; Hands-on Python Tutorial for Python 3</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <link rel="top" title="Hands-on Python Tutorial for Python 3" href="index.html" />
+    <link rel="up" title="5. Appendices" href="appendices.html" />
+    <link rel="next" title="5.4. HTML Source Markup" href="htmlsource.html" />
+    <link rel="prev" title="5.2. Some Special Windows Instructions" href="pythononwindows.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="htmlsource.html" title="5.4. HTML Source Markup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pythononwindows.html" title="5.2. Some Special Windows Instructions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" accesskey="U">5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="some-special-mac-instructions">
+<span id="index-0"></span><h1>5.3. Some Special Mac Instructions<a class="headerlink" href="#some-special-mac-instructions" title="Permalink to this headline">¶</a></h1>
+<p>While the Python language changes slowly, operating systems and setup methods change
+more rapidly with succeeding versions.
+The attempt here is to keep all such information in one place for the Mac OS-X operating system.
+It may become out of date at any time.</p>
+<p>I will assume a version of Max OSX of at least High Sierra (10.13 or later).  Upgrades are free.</p>
+<div class="section" id="versions">
+<h2>5.3.1. Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
+<p>I will use Python 3.8+ to mean the current version of Python, with version number at least
+3.8.1.
+Make sure you have the latest recommended version installed from <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>.
+Download the pkg file and double click to execute.</p>
+</div>
+<div class="section" id="editing-by-default-in-idle">
+<span id="edit-by-default-m"></span><h2>5.3.2. Editing by Default in Idle<a class="headerlink" href="#editing-by-default-in-idle" title="Permalink to this headline">¶</a></h2>
+<p>You will be working mostly with files ending in .py &#8211; Python source files.
+Most of the time you will be editing them and running them in IDLE, so the best
+default behavior when opening a file with extension .py is to have it open in
+Idle 3.8+.  If you can double click on a .py file in my examples,
+and Idle opens as soon as you have installed Python 3.8+, great - you should skip the rest of this section.</p>
+<p>If Idle did not open, here is how to change the default behavior:</p>
+<ol class="arabic simple">
+<li>In the Finder go to a file in my examples folder with the .py extension.
+and right click or control click on it. Select <strong>Get Info</strong>.</li>
+<li>In the Info window that pops up, In the drop-down menu for <strong>Open with:</strong>,
+you want to see
+<strong>IDLE.app</strong> on the top line (meaning it is already the default).
+You may possibly also see the version listed if you have several.  Presumably
+you are going through this because you do <em>not</em> see IDLE.app there.</li>
+<li>You may see <strong>IDLE.app</strong> lower down in the list of options.  Then select it there.</li>
+<li>If you did not see IDLE.app in the drop-down list at all:<ul>
+<li>Select <strong>Other...</strong>.</li>
+<li>A window of apps pops up.
+Toward the bottom is a check box for &#8220;Always Open With&#8221;.  Check it.</li>
+<li>If you do not see a Python folder in the list, just below the bottom of
+the page change Recommended Applications to All Applications</li>
+<li>Now you should see a Python 3.8 folder.  Open it and select Idle.app.</li>
+</ul>
+</li>
+<li>The Info window should become active again.  Be sure that now under
+<strong>Open with:</strong> you see IDLE.app.</li>
+<li>Under the IDLE.app you should see a button, <strong>Change All...</strong>.
+So that you never have to go through all these steps again, be sure to click
+that button.  A confirmation window will pop up.  Select Continue.</li>
+<li>Now you can close the Info window, and you should be able to open all .py
+files directly in Idle for editing by double clicking in the Finder!</li>
+<li>Then if you should happen to want to directly run a Python file from the Finder window,
+you will need to select the file with control-click or right-click
+and select the latest Python Launcher for Python 3.</li>
+</ol>
+</div>
+<div class="section" id="running-graphics-chapter-2">
+<h2>5.3.3. Running Graphics (Chapter 2)<a class="headerlink" href="#running-graphics-chapter-2" title="Permalink to this headline">¶</a></h2>
+<p>The graphics window likely comes up behind an unneeded Console Window. You can
+close the console window, and click on the graphics window title bar to
+bring it to the front.</p>
+</div>
+<div class="section" id="chapter-4-cgi-instructions">
+<h2>5.3.4. Chapter 4 CGI Instructions<a class="headerlink" href="#chapter-4-cgi-instructions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="opening-cgi-files-in-idle">
+<h3>5.3.4.1. Opening .cgi Files in Idle<a class="headerlink" href="#opening-cgi-files-in-idle" title="Permalink to this headline">¶</a></h3>
+<p>By convention the server programs that you will be writing end in &#8221;.cgi&#8221;.
+That is not an extension that is automatically associated with Idle for editing.
+You will want to change the association.  Do it the same way as the instructions
+above for getting .py files to open in Idle by default, except choose a .cgi file in my www
+folder, and go through the same procedure.</p>
+</div>
+<div class="section" id="setup-making-cgi-scripts-executable">
+<h3>5.3.4.2. Setup: Making CGI Scripts Executable<a class="headerlink" href="#setup-making-cgi-scripts-executable" title="Permalink to this headline">¶</a></h3>
+<p>A complication on a Mac, like any Unix derived system, is that programs
+that you run must be explicitly marked <em>executable</em>. (On Windows it follows from
+the file extension, like .exe.)  The examples/www folder may not
+have the cgi files marked executable (nor have several other technical things right).</p>
+<p>The example program examples/www/CGIfix.py is used to give direct
+Unix/Mac/Linux executability to CGI files for Chapter 4.</p>
+<p>In the finder open your www directory. You can open CGIfix.py in Idle and run it.
+Note the comment that the file <code class="docutils literal"><span class="pre">cgiServerScript</span></code> was created.
+This is used to lauch the local server.</p>
+<p>Important! Particularly if you later copy in a CGI script from a Windows
+machine, or if you <em>create any new cgi script</em> in the www directory, make sure
+it becomes executable (and possibly fix some other technical things) by
+launching CGIfix.py again.</p>
+<p>If you forget this, and the file is not executable,
+nothing happens in the browser when you try to run it,
+and the error message in the server window is very unhelpful -
+it says  &#8221;... File not found ...&#8221;.  Make sure you make new CGI files
+executable (with CGIfix.py)!  Running it extra times does not hurt.</p>
+</div>
+</div>
+<div class="section" id="terminal-use-optional">
+<h2>5.3.5. Terminal Use (Optional)<a class="headerlink" href="#terminal-use-optional" title="Permalink to this headline">¶</a></h2>
+<p>To use the Hands-on Python Tutorial, the information above should be sufficient
+to get your Mac usage going.  Terminals are quite useful in other contexts:
+There are many things that can be
+done from such a window that cannot be done from the Finder or with an App.</p>
+<p>If you would like a bit more background, read on.</p>
+<div class="section" id="navigation">
+<h3>5.3.5.1. Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h3>
+<p>OS X and Unix (from which OS X is derived)
+have a concept of the <em>current directory</em>
+Directory is the older term for folder from when there were not pictures of
+folders in a graphical interface.</p>
+<p>You start in your home directory.  My login id is anh, so my home directory is
+<code class="docutils literal"><span class="pre">/Users/anh</span></code>.  Substitute your login id for your machine.
+The slashes separate nested directories.  The top hard drive
+directory is <code class="docutils literal"><span class="pre">/</span></code>, which contains the directory <code class="docutils literal"><span class="pre">Users</span></code> which contains
+users&#8217; home directories, like my <code class="docutils literal"><span class="pre">anh</span></code>.  A shorthand in a terminal for your home directory
+is <code class="docutils literal"><span class="pre">~</span></code>.</p>
+<p>The terminal shows a system prompt when it is ready for user input.  The prompt
+can be set to show many things.  The end of the prompt is often <code class="docutils literal"><span class="pre">$</span></code>.
+Before that is often some indication of your current directory, like <code class="docutils literal"><span class="pre">~</span></code> for
+the home directory.</p>
+<p>If you want to see the full name of the current directory enter the command</p>
+<blockquote>
+<div>pwd</div></blockquote>
+<p>Single commands are executed after you press the Enter key.</p>
+<p>You can <strong>l</strong>i<strong>s</strong>t the contents of a directory with the <code class="docutils literal"><span class="pre">ls</span></code> command.
+Unix tends to abbreviate words in commands.</p>
+<p>If you use the ls command in your home directory, you should see
+<code class="docutils literal"><span class="pre">Desktop</span></code>, <code class="docutils literal"><span class="pre">Documents</span></code>, <code class="docutils literal"><span class="pre">Downloads</span></code>, ... listed.</p>
+<p>To <strong>c</strong>hange <strong>d</strong>irectory, use the <code class="docutils literal"><span class="pre">cd</span></code> command followed by
+the directory you would like to change to.  You can use the full
+name of the directory starting with <code class="docutils literal"><span class="pre">/</span></code>, but more commonly you just indicate
+where to go relative to where you are now.  <code class="docutils literal"><span class="pre">Desktop</span></code> is a subdirectory of
+your home directory, so from the home directory you can just enter</p>
+<blockquote>
+<div>cd Desktop</div></blockquote>
+<p>Here is a sequence on my computer after starting a terminal (skipping most
+of the output from <code class="docutils literal"><span class="pre">ls</span></code>)</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Last login: Sat May 19 18:03:19 on ttys001</div>
+<div class="line"><a class="reference external" href="mailto:anh&#37;&#52;&#48;lucky13">anh<span>&#64;</span>lucky13</a>:~$ pwd</div>
+<div class="line">/Users/anh</div>
+<div class="line"><a class="reference external" href="mailto:anh&#37;&#52;&#48;lucky13">anh<span>&#64;</span>lucky13</a>:~$ ls</div>
+<div class="line"><br /></div>
+<div class="line">...</div>
+<div class="line">Desktop                          ...</div>
+<div class="line">Documents                        ...</div>
+<div class="line">Downloads                        ...</div>
+<div class="line">...</div>
+<div class="line"><br /></div>
+<div class="line"><a class="reference external" href="mailto:anh&#37;&#52;&#48;lucky13">anh<span>&#64;</span>lucky13</a>:~$ cd Desktop</div>
+<div class="line"><a class="reference external" href="mailto:anh&#37;&#52;&#48;lucky13">anh<span>&#64;</span>lucky13</a>:~/Desktop$ pwd</div>
+<div class="line">/Users/anh/Desktop</div>
+<div class="line"><a class="reference external" href="mailto:anh&#37;&#52;&#48;lucky13">anh<span>&#64;</span>lucky13</a>:~/Desktop$ cd ..</div>
+<div class="line"><a class="reference external" href="mailto:anh&#37;&#52;&#48;lucky13">anh<span>&#64;</span>lucky13</a>:~$ pwd</div>
+<div class="line">/Users/anh</div>
+<div class="line"><a class="reference external" href="mailto:anh&#37;&#52;&#48;lucky13">anh<span>&#64;</span>lucky13</a>:~$</div>
+</div>
+</div></blockquote>
+<p>Notice that the last use of the <code class="docutils literal"><span class="pre">cd</span></code> command used directory <code class="docutils literal"><span class="pre">..</span></code>.
+That stands for the parent directory, the directory containing the
+current directory.</p>
+<p>If you unzipped examples.zip from your Desktop, you can go to the exaples with</p>
+<blockquote>
+<div>cd ~/Desktop/examples</div></blockquote>
+<p>Alter this if you put your examples somewhere else!</p>
+<p>It is useful to be in the examples folder.  If you start Idle from there,
+it is easy to open any of the example programs.</p>
+<p>When scripts are directly called by the operating system, they look
+for the proper interpreter to read them.  Our scripts are set up to look for
+python3.</p>
+<p>To start a regular python program from the current directory, like hello_you.py,
+you would enter a command with python3 and the file name, like</p>
+<blockquote>
+<div>python3 hello_you.py</div></blockquote>
+<p>Instead of shifting to a separate Shell as in Idle, the output appears right in the
+terminal window.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.3. Some Special Mac Instructions</a><ul>
+<li><a class="reference internal" href="#versions">5.3.1. Versions</a></li>
+<li><a class="reference internal" href="#editing-by-default-in-idle">5.3.2. Editing by Default in Idle</a></li>
+<li><a class="reference internal" href="#running-graphics-chapter-2">5.3.3. Running Graphics (Chapter 2)</a></li>
+<li><a class="reference internal" href="#chapter-4-cgi-instructions">5.3.4. Chapter 4 CGI Instructions</a><ul>
+<li><a class="reference internal" href="#opening-cgi-files-in-idle">5.3.4.1. Opening .cgi Files in Idle</a></li>
+<li><a class="reference internal" href="#setup-making-cgi-scripts-executable">5.3.4.2. Setup: Making CGI Scripts Executable</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#terminal-use-optional">5.3.5. Terminal Use (Optional)</a><ul>
+<li><a class="reference internal" href="#navigation">5.3.5.1. Navigation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pythononwindows.html"
+                        title="previous chapter">5.2. Some Special Windows Instructions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="htmlsource.html"
+                        title="next chapter">5.4. HTML Source Markup</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pythononmac.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="htmlsource.html" title="5.4. HTML Source Markup"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pythononwindows.html" title="5.2. Some Special Windows Instructions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" >5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2019, Dr. Andrew N. Harrington.
+      Last updated on Jan 10, 2020.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1+.
+    </div>
+  </body>
+</html>

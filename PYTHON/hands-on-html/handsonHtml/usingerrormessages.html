@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.1. Using Error Messages &mdash; Hands-on Python Tutorial for Python 3</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <link rel="top" title="Hands-on Python Tutorial for Python 3" href="index.html" />
+    <link rel="up" title="5. Appendices" href="appendices.html" />
+    <link rel="next" title="5.2. Some Special Windows Instructions" href="pythononwindows.html" />
+    <link rel="prev" title="5. Appendices" href="appendices.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pythononwindows.html" title="5.2. Some Special Windows Instructions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="appendices.html" title="5. Appendices"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" accesskey="U">5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-error-messages">
+<span id="index-0"></span><h1>5.1. Using Error Messages<a class="headerlink" href="#using-error-messages" title="Permalink to this headline">¶</a></h1>
+<p>You can expect to make some errors while coding.&nbsp; Idle provides
+information about the location and type of errors in several ways,
+depending on the kind of error.&nbsp; To be most useful, you want to be
+able to decode the error feedback.</p>
+<p>Idle developers keep updating error messages to make them more useful.
+The versions shown below are for Python 3.8.</p>
+<p>To illustrate, I start from a file that is purposefully incorrect,
+example program BADexamplecode.py, to
+show off debugging ideas:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter a number&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&#39;10 more is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&#39;Now we are done!)</span>
+</pre></div>
+</div>
+<p>I also have an initial documentation line, followed by lots of blank lines, so the popup window shown below does not obscure any code.&nbsp; If I try to run this code, I get</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/invalidSyntaxPrint.png"><img alt="image" src="_images/invalidSyntaxPrint.png" style="width: 350pt;" /></a>
+</div>
+<p>A pop-up Invalid Syntax window indicates the <strong>syntax error</strong> was found by the
+interpreter in just trying to read the program - never getting to
+execution.&nbsp; <em>After</em> you click on OK, the popup window goes away, and
+Idle highlights where it detected that there was an error:
+You should see the &#8220;p&#8221; at the beginning of the last line with a pink background highlight.</p>
+<p>You should know that print statements are perfectly legal.&nbsp; There does
+not seem to be an issue with the word print.&nbsp; Note carefully what I
+said earlier:&nbsp; This is where the interpreter <em>first noticed</em> there was
+an error:&nbsp; The actual error could be earlier - it just was not clear that
+there was one yet.&nbsp; The most common earlier place is the previous
+line, and I illustrated the most common such error.&nbsp; The interpreter
+did not find an error on the previous line because it did not realize
+it was at the end of a statement.&nbsp; When can a statement go on to the
+next line?&nbsp; - When there are unmatched grouping characters, most
+commonly ( ).</p>
+<p>It is very easy to have unmatched parentheses, particularly when there
+are many levels of pairs of parentheses.&nbsp; Recall that when you type in
+Idle it shows you what closing parentheses match with.&nbsp; Here is the
+image just after I added the correct final ) at the end of the
+previous line:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/idleShowsMatchingParentheses.png"><img alt="image" src="_images/idleShowsMatchingParentheses.png" style="width: 227.25pt;" /></a>
+</div>
+<p>I did not show the progress in entering this program with its error, but
+Idle would have given a clue.&nbsp; If we back up to when the first
+incorrect print line was entered, right after the enter key is pressed,
+you would see</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/strangeCursorLocIndicatesError.png"><img alt="image" src="_images/strangeCursorLocIndicatesError.png" style="width: 227.25pt;" /></a>
+</div>
+<p>Note where the vertical bar cursor (|) jumped to:&nbsp; not the beginning of
+the next line, where you would put the next statement.&nbsp; If you look
+where it is positioned relative to the previous line, it is just after
+the unmatched opening parenthesis!&nbsp; This is Idle&#8217;s convention, so if you are
+paying attention to the automatic cursor indent, you should realize
+there was an error with unmatched delimiters.</p>
+<p>Note that Idle also should give you warning of the opposite error: If
+you add an excess close-parenthesis, you should hear a beep,
+indicating it was not expecting that character.</p>
+<p>So now assume we have done this correction to the program, adding the
+closing parenthesis.&nbsp; If we try to run again:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/EOL_inStringLiteral.png"><img alt="image" src="_images/EOL_inStringLiteral.png" style="width: 350pt;" /></a>
+</div>
+<p>Another syntax error, this time at the end of the last line, and with
+more information about the error.&nbsp; EOL stands for &#8220;End Of Line&#8221;,&nbsp; so
+it got all the way to the end of the line reading a string literal.
+The coloring also indicates this:&nbsp; green all the way to the end of the
+line.&nbsp; What does a string literal need at the end?&nbsp; - A final matching
+quote character!&nbsp; And we need a closing parenthesis, remembering our
+previous error.&nbsp; Suppose I complete the line as</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><span class="s">&#39;Now we are done!)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="index-1">I can now try to run again.&nbsp; This time we do not get a pop-up syntax
+error window.&nbsp; This means the interpreter did not find any errors
+<em>reading</em> the program.
+Many errors are only found when running the program, so execution
+starts in the shell, leading to a <strong>run-time error</strong>.
+The program first prompts for a number, and I
+enter 100:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/implicitConversionErrorTrace.png"><img alt="image" src="_images/implicitConversionErrorTrace.png" style="width: 480pt;" /></a>
+</div>
+<p>We see a red <strong>error traceback</strong>.&nbsp; We will discuss its
+various parts.  It shows the program line</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>In this little short program, it is easy to go back to the Python
+source and locate the line.&nbsp; Idle also gives you help with this in
+general:&nbsp; The next screen shows me right-clicking the mouse (or
+control-click on a Mac) on top of the red &#8220;line 14&#8221;, where it is
+saying the error is.&nbsp; This generates a pop-up window.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/gotoErrorLine1.png"><img alt="image" src="_images/gotoErrorLine1.png" style="width: 460pt;" /></a>
+</div>
+<p>The only allowed option is to select <strong>Go to file/line</strong></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/gotoErrorLine2.png"><img alt="image" src="_images/gotoErrorLine2.png" style="width: 260pt;" /></a>
+</div>
+<p>and then the focus jumps to the window with the source code, and
+highlights the desired line:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/gotoErrorLine3.png"><img alt="image" src="_images/gotoErrorLine3.png" style="width: 227.25pt;" /></a>
+</div>
+<p>So we have the line with the execution error.&nbsp; We still need to figure
+out what is going on.&nbsp; The bottom line of the red traceback
+gave a description of
+the error:</p>
+<blockquote>
+<div>TypeError: can only concatenate str (not &#8220;int&#8221;) to str</div></blockquote>
+<p>Think.&nbsp; You could start by considering the implications of &#8220;concatenate&#8221;,
+or, since it is a type error, you could look for the types it refers to.
+Let us start by looking at the types.&nbsp; It refers to an
+int.&nbsp; Clearly we have 10.&nbsp; There is something about a string.&nbsp; The
+other data is <code class="docutils literal"><span class="pre">x</span></code>.&nbsp; What is its type?&nbsp; Of course the prompt in the
+previous line asks for a number, but what type is returned by the
+input function?&nbsp; &#8211; always a string!&nbsp; Look at the expression again
+<code class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">10</span></code> &#8211; a string, plus-sign, and a number&nbsp; &#8211;
+a plus-sign after a string means concatenation, not numeric addition.
+As the error says, you can only concatenate onto the first string
+with another string, not an <code class="docutils literal"><span class="pre">int</span></code>.</p>
+<p>We want numeric addition, so we need two numbers, and the
+string must be explicitly converted.&nbsp; You might need to look that up,
+but you have an idea what you are looking for:&nbsp; we can use <code class="docutils literal"><span class="pre">int</span></code> as a
+function to convert the string.&nbsp; We do not need to add an extra line
+&#8211; we can make <code class="docutils literal"><span class="pre">x</span></code> start off as an <code class="docutils literal"><span class="pre">int</span></code>, changing the first line to</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter a number&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p id="index-2">Note that the error was suggesting a fix that you do not want:
+ending up with string concatenation.  When something does not make sense,
+the interpreter does not know what you mean.  It tries to make a suggestion
+that is <em>likely</em> to be helpful, though in this case it is wrong.
+At least in this case it was suggesting something you should understand
+already.</p>
+<p>We can go a bit further in this case:&nbsp; Though running the original first line by
+itself did not cause an error, looking at the output above, you can
+see it is ugly, with the prompt running into the user response.&nbsp; This
+is a <strong>logical error</strong>.&nbsp; It is easy to correct, changing the ending of the
+first line prompt so we have</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&#39;10 more is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&#39;Now we are done!)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now run again:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/firstLineOutput.png"><img alt="image" src="_images/firstLineOutput.png" style="width: 150pt;" /></a>
+</div>
+<p>One final logical error is the close-parenthesis in this output.&nbsp; When
+debugging, I added a required final quote character on the last line,
+but I left an extra close-parenthesis.&nbsp; In &#8220;fixing&#8221; the last line
+earlier, I added another error.&nbsp; I am illustrating that this is
+unfortunately easy to do!&nbsp; Final code:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter a number: &quot;</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&#39;10 more is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s">&#39;Now we are done!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Final run:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/lastLineOutput.png"><img alt="image" src="_images/lastLineOutput.png" style="width: 150pt;" /></a>
+</div>
+<p>So we have illustrated all three kinds of errors:</p>
+<ul class="simple">
+<li>Syntax errors detected with a pop-up window in Idle before the
+program executes;</li>
+<li>Run time errors causing a red traceback sequence in the Shell output;</li>
+<li>Logical errors that Python does not find, but we need to note and
+troubleshoot in the source code when the results are not what we want.</li>
+</ul>
+<p>I chose common simple errors, so hopefully you would have been able to
+figure out the meaning of the error message.&nbsp; That is a <em>lot</em> to expect
+in general.&nbsp; We are only gradually adding explanations of bits of
+Python syntax.&nbsp; You can easily make an error that the Python interpreter guesses as
+being based on a more advanced feature, so the error message makes no
+sense to you.</p>
+<p>Even if you do not understand the error message, you should get the
+information about where the error occurred.&nbsp; Hopefully a concentrated
+look there will lead to you seeing the error and being able to correct
+it.</p>
+<p>If you did not understand the original error message, then there is a
+further useful step after you <em>do</em> figure it out (with or without
+outside help): <strong>Go back and consider the error message again.</strong>&nbsp; After
+seeing what was actually wrong, the error message may make sense now,
+AND that knowledge may be useful to speed up your understanding and
+your fix the next time you see that error message.</p>
+<p>Particularly as a beginner, you can still hit a brick wall some of the
+time, even with a partner.&nbsp; You are also in a course with an
+instructor:&nbsp; that is a major reason I am here. Ask for help if
+considering the information provided by Idle, plus a little thought, are
+not enough!</p>
+<div class="section" id="nested-calls-in-traceback">
+<span id="index-3"></span><h2>5.1.1. Nested Calls in Traceback<a class="headerlink" href="#nested-calls-in-traceback" title="Permalink to this headline">¶</a></h2>
+<p>In the previous example program, the execution error
+occured outside of any function call.
+There are further useful features in an error traceback,
+when there are errors inside function calls.</p>
+<p>We illustrate, showing the output, with error traceback,
+for a silly example program,&nbsp;showtraceback.py:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="sd">&#39;&#39;&#39;Program with intended error to demonstrate traceback from nested call&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">invminus4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;This program is INTENDED to cause an execution error.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Ok call to invminus4(6) next:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">invminus4</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&#39;Bad call invminus4(4) next:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">invminus4</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Won&#39;t get to here!&quot;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that the first call to invminus4, with parameter 6, is fine:
+1.0/(6-4) = 0.5.
+In the execution of the call <code class="docutils literal"><span class="pre">invminus4(4)</span></code>,
+we get an error traceback message.&nbsp; The image
+below comes after the traceback is displayed, and then just as the
+user uses the mouse to select the line where the error was:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/tracebackAtError.png"><img alt="image" src="_images/tracebackAtError.png" style="width: 450pt;" /></a>
+</div>
+<p>Note that after the title line in the traceback there are three
+indented lines starting with &#8220;File&#8221;, not just one line as in the
+earlier program.&nbsp; The bottom File line shows the line where the error
+occurred, and we could jump to the source, continuing from the step in
+the previous image:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/source_error_highlighted.png"><img alt="image" src="_images/source_error_highlighted.png" style="width: 450pt;" /></a>
+</div>
+<p>The error takes place in a function, and a function can be called in
+many places with different parameters. The further up lines in the
+traceback show the <strong>chain of function calls</strong> to reach that occurrence of
+the error.&nbsp;&nbsp; The program calls main in the bottom line of the program
+(line 13, first File line reference), and then main calls invminus4
+twice.&nbsp; We can tell <em>which</em> call caused the error, since the traceback
+shows the call to <code class="docutils literal"><span class="pre">invminus4</span></code> at line 10.&nbsp; If you had any question of
+the context for any of the nested calls leading to the error, you
+could also select a previous File line with the mouse, and jump to the
+calling line in the source.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.1. Using Error Messages</a><ul>
+<li><a class="reference internal" href="#nested-calls-in-traceback">5.1.1. Nested Calls in Traceback</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="appendices.html"
+                        title="previous chapter">5. Appendices</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pythononwindows.html"
+                        title="next chapter">5.2. Some Special Windows Instructions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/usingerrormessages.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pythononwindows.html" title="5.2. Some Special Windows Instructions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="appendices.html" title="5. Appendices"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" >5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2019, Dr. Andrew N. Harrington.
+      Last updated on May 04, 2020.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1+.
+    </div>
+  </body>
+</html>

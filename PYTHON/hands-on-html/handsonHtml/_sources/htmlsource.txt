@@ -1,0 +1,428 @@
+.. index:: html
+   single: web page; markup
+
+HTML Source Markup
+===================
+
+The section :doc:`webbasics` compares HTML format with
+other document formats.  Here we concentrate on HTML:
+Hypertext Markup Language.
+
+I use a convenient plain text editor, Sublime Text 
+(free download at https://www.sublimetext.com/3) 
+that colors the syntax of html source, much as Idle colors Python syntax.
+This is an *advantage* over Kompozer.
+
+Unlike hybrid editors such as Kompozer, the editor only shows the raw HTML text,
+not the way it looks in a browser.  
+With a plain text editor like this,
+you have a couple extra steps to look at the formatted view:
+You need to save the file, and separately load it into a browser.
+If you make a change to the html source,
+and want to see what that changes in the browser view,
+then you need to save the source file again,
+and then get the browser to *reload* the page.
+
+.. index:: textedit
+
+**Mac users -- TextEdit**: 
+   You can also edit 
+   raw html with the included Mac app TextEdit, 
+   but with several steps to *change* the defaults.
+   (The initial defaults are to show *no* html source.)   
+   Since TextEdit does not do syntax coloring, 
+   an editor like Sublime Text is likely better, 
+   as long as you do not mind doing one extra download.  
+
+   If you *do* want to
+   use TextEdit to see and edit html source: 
+
+   #. Open TextEdit,
+   #. Click on Help in the menu bar
+   #. Select *TextEdit help page*
+   #. In the list that pops up, select "Work with HTML documents".
+   #. Follow the instructions in the section
+      "Always open HTML files in code-editing mode".  
+   #. As a beginner, I suggest these settings in the last help section, 
+      "Change how HTML files are saved": 
+
+      * In 2. select  the CCS style "No CSS".  Leave the defaults for document type and encoding.
+      * In 3. do *not* select preserve white space.
+
+Now, for everyone, we get into the first simple example, 
+the raw html for ``hello.html``. 
+This file is in the examples sub-folder www.
+
+.. literalinclude:: ../examples/www/hello.html
+   :language: html
+   :linenos:
+
+You are encouraged to open it both in a plain text editor 
+like Sublime Text or Mac TextEdit and in a browser.
+The other HTML files discussed here, are in the same folder, 
+and you are encouraged to open them in the same two ways.
+
+With the html source text coloring in this tutorial.
+the only text that you will see in a browser's usual formatted view 
+is what appears as black in the image.
+Everything else is markup.  Markup tag names are boldface, and colored dark blue.
+Most of the markup appears inside angle brackets, and most
+markup has both an opening and a closing tag, with affected contents in between,
+like ``<title>`` and ``</title>`` in line 4.  The closing tag has a ``/``
+right after the ``<``.
+
+Much of the markup is boilerplate -
+I am not going to explain it much.
+
+In particular all the part through the opening tag for the body, <body>,
+in lines 1-7 is standard for our very simple pages, 
+except for the bit in black, inside the title markup,
+on line 4.  The title text appears in the *tab label* in your browser, 
+*not* inside the formatted page that appears in the browser.
+
+The only parts you actually see on the page are inside the body:
+here the body contents are in lines 8-11.
+
+You are likely to want to start with a heading.  
+Line 8 uses the ``<h1>`` markup to create a main heading.
+
+I spaced the text in the body in a strange way, to illustrate
+a major feature of html: It reformats if you change the window width.
+That means the browser generally *chooses the places to wrap* to the next line.
+In particular *any amount of white space*, including newlines in your
+raw text, are merely treated as a place 
+where *there could be a break to the next line*, 
+or it could just display as a *single* space before the next word.
+
+Unless you have an extremely narrow window where you display 
+hello.html in your browser, you should see "Hello, world!"
+all on one line.  That means the newline after "Hello," in the source text 
+and the blanks before "world",
+just turn into a single space when displayed.
+
+Sometimes you want an explicit line break, that shows in the browser.
+The ``<br>`` markup forces a line break.  
+(There are much more flexible ways to break to a new line, 
+like using the paragraph tag, ``<p>``, but we are keeping things simple here.)
+
+In hello.html, that means that no matter how wide your browser window is,
+you will always see "It is a fine day." 
+starting on a line *after* "Hello, world!", 
+because of the ``<br>`` on line 10. 
+
+This compression of white space also means that I can indent 
+to help me keep track of
+multi-line contents between opening and closing markup,
+and this does not change the html formatting.
+
+The final two lines 12-13 are also standard boilerplate, 
+closing the tags that were started earlier 
+for the body and the entire html section.
+
+There is plenty more formatting markup for fonts, text size, 
+paragraphs, ...
+that is not discussed here.  
+Common document editors like Microsoft
+Word and Open Office
+*do* allow you to generate static html files.  
+However the source html text is NOT visible through these editors,
+and they all add lots of extra detailed formatting information in the html source
+that greatly lengthens the file and obscures the text that you do add.  
+Also, 
+such editors cannot handle html *forms*.
+
+.. dump
+   **Mac**: You can also use TextEdit for static content
+   and markup while in a browser view -- 
+   opening an html document while *allowing* rich text. 
+   For instance this would work for an output Template.
+   Unfortunately you cannot add form tags this way,
+   and even worse, any form tags you had when opening in
+   browser mode are *expunged*.the app does not make it easy to switch 
+   between browser and html source views.  You have the change the 
+   app Preferences in the Open and Save tab, 
+   close the html file and reopen with the new preference. 
+   then you have to go through this again to change the view back.
+   If you do make additions in browser view, you can easily add italics, 
+   different fonts, ..., like in any modern word processor, 
+   without needing to know the html markup for these features.
+
+For the exercises, I am expecting a pattern with output page templates.  
+The templates are just static html files (that later get modified by the string format operation 
+inside your Python program).
+
+An example is the output template for the adder programs: the initial testing program additionWeb.py and the later cgi server program adder.cgi.
+The template file is additionTemplate.html in the www examples folder:
+
+.. literalinclude:: ../examples/www/additionTemplate.html
+   :language: html
+   :linenos:
+
+The text that is *not* inside tags is what you will see *if* this page is displayed directly in a browser, 
+including the formatting instructions in curly braces.
+
+The Python adder programs do not display this page directly.  Instead they use it as a format string, 
+so the substitutions into the curly braces are made before the page is displayed.
+
+.. index::
+   single: html; special characters
+   special html symbols
+
+Special characters
+~~~~~~~~~~~~~~~~~~~~
+
+We had markup in Python string literal notation for special characters.  
+For the strings the markup all started with the backslash character, 
+so '\\n' is a newline, '\\\\' is a displayed backslash ....
+
+In html ``<`` and ``>`` have special meaning, 
+so if we want to *see* those symbols in the browser,
+we need a special substitute for the individual characters in the raw html.
+Those substitutes start with an ampersand (&) and end with a semicolon (;),
+with an abbreviation in between:
+
+  | ``<`` is replaced by &lt;
+  | ``>`` is replaced by &gt;
+  | ``&`` is replaced by &amp;
+  
+Since ``&`` now is used specially for character markup, we need the ``&amp;`` 
+to *display* an ampersand in the browser.
+
+The collapsing of whitespace sequences is a feature of html.
+If you really want more spaces in sequence,
+you can use a character that looks like a space,
+but is not considered as whitespace by the html formatter.
+The character markup is ``&nbsp;`` abbreviating 
+Non-Breaking SPace. 
+
+You can put arbitrary text, possibly with some special character codes, 
+*outside* of tags, and it will be displayed for the user to see in a browser.
+
+.. index::
+   single: html; form
+   single: html; attribute
+   single: html; value
+   single: html; input
+   single: html; submit   
+   single: html; action
+
+HTML Form Markup
+~~~~~~~~~~~~~~~~~~
+
+For a page that is totally static, 
+or just displaying output from a 
+server cgi program, you do not need
+form syntax.  
+However if you want the user to input data into
+a cgi program from a web page, then you need a form.
+Static document generation apps are no use here!
+
+First we introduce the basic syntax needed for
+the exercises.  :ref:`advanced_tags`
+introduces further features that might be useful
+in a more elaborate project.
+
+Here is ``adder.html``, from the examples sub-folder www:
+
+.. literalinclude:: ../examples/www/adder.html
+   :language: html
+   :linenos:
+
+This page includes a simple form, lines 11-19.
+
+A form can only appear nested inside the body.
+Input tags can only appear inside the form.
+
+Unlike the opening markup for tags introduced so far, 
+input tags include not only the tag name, but also *attributes*
+are inside the angle brackets after the tag.
+
+This is illustrated in line 11 for the form,
+with syntax coloring, with attribute assignments in light blue.
+
+Attributes have a standard format, 
+with an attribute identifier and an equal sign
+and a double-quoted string.  
+Attribute assignments are separated by whitespace.
+
+In line 11 the form attributes are **action**, **method** and **enctype**.
+We will not edit the attribute identifiers.  
+The only things inside the opening tags that we will edit for new 
+examples are the *contents of some of the quoted strings*.
+This way it is not important in this course
+for you to learn a bunch of html syntax.  You can copy models,
+and modify just data in quoted strings.
+
+The syntax for an attribute looks like a Python assignment statement,
+with the string on the right being the value assigned to the attribute.
+
+A form requires a further markup tag inside of it: ``input``.
+
+Some confusion is possible here from the fact **value**
+is also the name of a required attribute for a input tag, 
+and all attributes have a string assigned as their value.  I will try to use the phrase "string value" consistently for the second usage, and I will try to show the 
+attribute names in boldface, so **value** refers to the attribute name used inside an input tag.
+Or I will show a full attribute assignment like ``value="0"``.
+
+The one form attribute that is important to modify correctly is
+the **action** attribute.  Its string value should be the server program
+that will act on the data coming from the inputs in the form.
+In this case that is adder.cgi.  Be sure you update this field
+when you copy to modify for a new page!
+
+The generic input tags used to get data in a form are
+like in lines 13 and 15.  Input tags do not have a closing tag.
+They typically have a separate label as part of the web page's
+displayed text, like "Number 1:" and "Number 2:".
+The browser shows a box for the user input.
+
+The important input attributes for us here are **name** and **value**.
+
+The initial **value** attribute string is what the user sees inside the input box
+when the page is first displayed.
+When the user changes the text in the box, 
+it is remembered as a replacement **value** attribute's string, to be later passed
+on to the cgi program.
+
+In order for the cgi program to know which **value** is which, the **name**
+attribute is used.  In cgi programs the form accessing methods like
+``getfirst`` must have the first parameter match 
+*the quoted string in the associated* **name** *attribute in the form*.
+For example, in a cgi file, the method call ``form.getfirst('x')`` makes sense
+*only* if there is an input tag in the html form page with attribute ``name="x"``
+(as we have in ``adder.html``).
+
+.. warning:
+   A common cause of errors is not editing a form 
+   and the cgi program called by it 
+   to make sure that these names *match*.
+
+Forms can have any number of input fields like these, distinguished in the cgi script by 
+their **name** attribute.  
+
+A form must always have exactly one special input tag like in line 17:
+The attributes here are somewhat different: **value** and **type**.  
+The **type** attribute must be
+assigned the string ``"submit"``.  With this **type**, 
+the **value** attribute's string does not appear in a user-editable input box.
+Instead it is the label text on the *submit button*.  When the user clicks
+on that button, the browser immediately sends all the form's input
+to the cgi program given in the form's **action** attribute .  Then the next page viewed
+in the browser is the one produced by the cgi program....
+
+This is all you really need if you just are going to get user data from
+text input fields, as in the Chapter 4 exercises.  
+Between your form's starting and ending tag,
+you can have any number of input tags with different **name**
+attributes values to record user text.
+You must have exactly one input tag in the form with ``type="submit"``.
+
+.. index:: checkbox
+   radio button
+   single: html; radio button
+   single: html; checkbox
+
+
+.. _advanced_tags:
+
+More Advanced Form Input Tags (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You have probably seen other input and display mechanisms on web pages,
+like radio buttons and check boxes.
+
+You can see an example by running the pizza1.cgi URL in the optional Tutorial section
+ref:`More-Advanced-Examples`.
+
+The form here is created in the cgi program from a template page,
+``pizzaOrderTemplate1.html`` in the examples sub-folder www,
+which shows the syntax that you can copy for input tags where the 
+**type** attribute has string value "checkbox", "radio", or "hidden":
+.
+
+.. literalinclude:: ../examples/www/pizzaOrderTemplate1.html
+   :language: html
+   :linenos:
+
+Radio buttons allow you to make a unique choice among multiple options in a group.
+If you click on one, and then another, the selection of the previous one is removed and the later one is noted instead.
+Lines 19, 21, and 23 show a group of radio buttons, with text after each one describing its meaning.
+They are radio buttons because of the attribute settings ``type="radio"``.  
+They form a group, because the **name** attribute's string value is the *same* for each. (In this case, name="size").  
+The **value** of the chosen one is passed to the cgi program.
+When the cgi program calls ``form.getfirst('size')``, just the string assigned to the selected input's **value** attribute is returned.  Here it would be 
+'small', 'medium' or 'large'.
+
+If you want to allow multiple *simultaneous* selections from a group, 
+use input tag attribute ``type="checkbox"``, as in lines 27, 29, 31, 33, and 35.  
+Other than this new string value for the **type** attribute, the syntax in this tag is like for radio buttons, with distinct assignments to the **value** attribute.
+In the cgi program, however, you access the data differently:
+Read the results of a group of check boxes
+with the ``getlist`` method, that returns a *list* of the values of checked checkboxes.
+For instance if the user of this form checks for sausage, onions, and extra cheese,
+``form.getlist('topping')`` returns ``['sausage', 'onions', 'extra cheese']``.
+
+.. index:: 
+   single: html; hidden
+
+
+Finally, there is a major complication when wanting to go back and forth,
+running a sequence of cgi programs, displaying
+a sequence of forms in between to get further user input.  
+Even if you are running the same cgi program each time,
+each call the the cgi program is *independent*:  
+Nothing is automatically remembered from the previous call the the cgi program.
+If you want to remember things defined in a previous call to a cgi program,
+then the output of the earlier cgi program 
+can have a form with one or more input fields 
+with ``type="hidden"``.  
+
+Here "input" is not referring to *user* input in the form: 
+*Nothing about this tag is visible to the user of the form.*  
+The input is input *into the following cgi program* from the the form.
+It can be read in the cgi program 
+via its **value** attribute, like a regular text box input.
+
+This syntax it pretty straightforward. Explaining its use
+in the cgi program ``pizza1.cgi`` is more involved:
+
+#. The first time the cgi program is called directly with 
+   ``http://localhost:8080/pizza1.cgi``.
+   Then there was *not* a previous form feeding into it, 
+   so when this initial execution of the cgi program
+   calls
+   ``form.getfirst('pastState', '')``,
+   the default ``''`` is returned, indicating there was no earlier form,
+   
+#. After testing this value in an if-statement, 
+   the cgi program chooses to *create* the form for an order. 
+   Note the braces various places in ``pizzaOrderTemplate1.html``:  This
+   is not a final html page.  It is used as a format string to create a page.
+   The cgi program creates its output, which is a form, 
+   substituting ``'order'`` for ``{state}`` in line 40.  
+   This form is created and sent back to the user's browser, 
+   so the hidden input
+   field with ``name="pastState"`` has ``value="order"``.
+
+#. In the browser, the user fills in the fields in the order form.
+   The user does *not* see the hidden input field, but it is there.
+   The user submits the form back to ``pizza1.cgi``,
+   so ``pizza1.cgi`` executes a *second* time.
+
+#. In the second execution of the cgi program, the call is made again: 
+   ``form.getfirst('pastState', '')``
+   and this time ``'order'`` is returned, since it was specified in the 
+   hidden field in the form.  
+   Hence the cgi program sees that
+   there *was* a previous form.  Then the cgi program goes through the code to
+   read the order fields and process the data to return a response page.
+
+ 
+There is a huge amount to learn about more elaborate HTML that we are omitting:  
+All sort of formatting,
+form actions acted on within the browser via the programming language *javascript* (without server interaction),
+custom formatting rules via cascading style sheets (CSS), ....
+
+What we have in this tutorial appendix is sufficient to have simple pages interact with a server.
+
+

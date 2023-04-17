@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web page Basics &mdash; Hands-on Python Tutorial for Python 3</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <link rel="top" title="Hands-on Python Tutorial for Python 3" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="web-page-basics">
+<span id="index-0"></span><h1>Web page Basics<a class="headerlink" href="#web-page-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="format-of-web-page-markup">
+<span id="format-of-web"></span><h2>Format of Web Page Markup<a class="headerlink" href="#format-of-web-page-markup" title="Permalink to this headline">¶</a></h2>
+<p>Documents can be presented in many forms. A simple editor like Idle
+or Windows Notepad produce plain text: essentially a long string
+of meaningful characters that appear directly in the final text you view.</p>
+<p>Documents can be displayed with formatting of parts of the
+document. Web pages allow mixtures of different fonts, italic, and boldfaced
+emphases, and different sized text. Microsoft
+Word, Open Office, and TextEdit, and Pages, all display documents with various
+amounts of formatting. The syntax for the ways different systems
+<em>encode</em> the formatting information varies enormously.</p>
+<p>If you look at an old Microsoft Word .doc document in a plain text editor
+like Notepad, you should be able to find the original text buried
+inside, but most of the symbols associated with the formatting are
+unprintable gibberish as far as a human is concerned.</p>
+<p id="index-1">Hypertext markup language (HTML) is very different in that regard.
+It produces a file of entirely human-readable characters, that
+could be produced with a plain text editor, but the <em>markup</em>
+parts of the file do not appear directly in your browser &#8211;
+instead they instruct the browser how to format the page.</p>
+<p>For instance in HTML, the largest size of a heading with the text
+&#8220;Web Introduction&#8221;, would look like</p>
+<blockquote>
+<div>&lt;h1&gt;Web Introduction&lt;/h1&gt;</div></blockquote>
+<p>The heading format is indicated by bracketing the heading text &#8216;Web
+Introduction&#8217; with markup sequences, &lt;h1&gt; beforehand, and &lt;/h1&gt;
+afterward. All HTML markup is delimited by <em>tags</em> enclosed in angle
+brackets, and most tags come in pairs, surrounding the information
+to be formatted. The end tag has an extra &#8216;/&#8217;. Here &#8216;h&#8217; stands for
+heading, and the number indicates the relative importance of the
+heading. (There is also h2, h3, .... for smaller headings.) In the
+early days of HTML, editing was done in a plain text editor, with
+the tags being directly typed in by people who memorized all the
+codes!</p>
+<p id="index-2">With the enormous explosion of the World Wide Web, specialized
+software has been developed to make web editing be much like word
+processing, with a graphical interface, allowing formatting to be
+done by selecting text with a mouse and clicking menus and icons
+labeled in more natural language. The software then automatically
+generates the necessary markup. An example used in these tutorials
+is the free, open source Kompozer from
+<a class="reference external" href="https://sourceforge.net/projects/kompozer/">https://sourceforge.net/projects/kompozer/</a>. It downloads the appropriate version
+for either a Windows machine or for OSX versions <em>older than Catalina</em>.
+You might download it if you are not already using another environment that lets
+you see both the unformatted plain text and the formatted view.</p>
+<p>If your operating system supports Kompozer,
+you can open it and easily generate a document with a heading,
+and italic and boldfaced portions....</p>
+<p>An advantage of Kompozer is that by merely clicking on a different bottom tab,
+you can see either the raw html source text or a view like you would see in a browser.</p>
+<p>If you use a plain text editor to generate the html source,
+then you have extra steps to look at the formatted view:
+You need to save the file, and separately load it into a browser.</p>
+<p>A disadvantage of Kompozer, when working in html source view,
+is that the syntax is not color coded.
+You may want (or need) to skip Kompozer and just use an editor like Sublime Text.</p>
+<div class="section" id="introduction-to-html-sourcecode">
+<h3>Introduction to HTML sourcecode<a class="headerlink" href="#introduction-to-html-sourcecode" title="Permalink to this headline">¶</a></h3>
+<p>See the image of the raw html for hello.html.</p>
+<p>image</p>
+<p>I use a convenient plain text editor, Sublime Text (free download)
+that colors the syntax of html source, much as Idle colors Python syntax.</p>
+<p>The only text that you see in the browser is what appears in the image as black.
+Everything else is markup.  Markup tag names are red.</p>
+<p>Most of the markup is boilerplate -
+I am not going to explain it much.</p>
+<p>In particular all the part through the opening tag for the body, &lt;body&gt;,
+in lines 1-7 is standard, except for the bit in black, inside the title markup,
+on line 4.  This title appears in the tab label in your browser,
+not inside the formatted page.</p>
+<p>The only parts you actually see on the page are inside the body:
+here the body contents are in lines 8-11.</p>
+<p>You are likely to want to start with a heading.
+Line 8 uses the <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> markup to create a main heading.</p>
+<p>I spaced the text in the body in a strange way, to illustrate
+a major feature of html: It reformats if you change the window width.
+That means the browser generally chooses the places to wrap to the next line.
+In particular <em>any amount of white space</em>, including newlines in your
+raw text, are merely treated as a place
+where <em>there could be a break to the next line</em>,
+or it could just display as a single space before the next word.</p>
+<p>This compression of white space also means that I can indent
+to note help me keep track of
+multi-line contents between opening and closing markup,
+and this does not change the html formatting.</p>
+<p>Unless you have an extremely narrow window where you display
+hello.html in your browser, you should see &#8220;Hello, world!&#8221;
+all on one line.  The newline after &#8220;Hello,&#8221; in the raw text
+and the blanks before &#8220;world&#8221;,
+just turn into a single space.</p>
+<p>Sometimes you want an explicit line break, that shows in the browser.
+The <code class="docutils literal"><span class="pre">&lt;br&gt;</span></code> markup forces a line break.
+In hello.html, that means that no matter how wide your browser window is,
+you will always see &#8220;It is a fine day.&#8221;
+starting on a line <em>after</em> &#8220;Hello, world!&#8221;.</p>
+<p>The final two lines 11-12 are also standard boilerplate,
+closing the markup that was started earlier
+for the body and the entire html section.</p>
+<p>There is plenty of more formatting markup, for fonts, text size and colors,
+paragraph styles, ...
+that is not discussed here.
+Common document editors like Microsoft
+Word, Open Office, and TextEdit,
+<em>do</em> allow you to generate static html files.
+However the source html text is NOT visible through these editors,
+and they all add lots of extra formatting information in the html source
+that greatly lengthens the file.  Also,
+such editors cannot handle html <em>forms</em>, discussed in an appendix.</p>
+<p>Special characters</p>
+<p>We had markup in Python string literal notation for special characters.
+For the strings the markup all started with the backslash character,
+so &#8216;n&#8217; is a newline, &#8216;\&#8217; is a displayed backslash ....</p>
+<p>In html <code class="docutils literal"><span class="pre">&lt;</span></code> and <code class="docutils literal"><span class="pre">&gt;</span></code> have special meaning,
+so if we want to <em>see</em> those symbols in the browser,
+we need a special substitute for the individual characters in the raw html.
+Those substitutes start with an ampersand (&amp;) and end with a semicolon (;),
+with an abbreviation in between:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">&lt;</span></code> is replaced by &amp;lt;</div>
+<div class="line"><code class="docutils literal"><span class="pre">&gt;</span></code> is replaced by &amp;gt;</div>
+<div class="line"><code class="docutils literal"><span class="pre">&amp;</span></code> is replaced by &amp;amp;</div>
+</div>
+</div></blockquote>
+<p>Since <code class="docutils literal"><span class="pre">&amp;</span></code> now is used for character markup, we need the <code class="docutils literal"><span class="pre">&amp;amp;</span></code>
+to <em>display</em> an ampersand in the browser.</p>
+<p>The collapsing of whitespace sequences is also a special feature of html.
+If you really want more spaces in sequence,
+you can use a character that looks like a space,
+but is not considered as whitespace by the html formatter.
+The character markup is <code class="docutils literal"><span class="pre">&amp;nbsp;</span></code> for
+Non-Breaking SPace.</p>
+</div>
+<div class="section" id="html-form-markup">
+<h3>HTML Form Markup<a class="headerlink" href="#html-form-markup" title="Permalink to this headline">¶</a></h3>
+<p>For a page that is totally static,
+or just displaying output from a
+server cgi program, you do not need
+form syntax.
+However if you want the user to input data into
+a cgi program from a web page, then you need a form.</p>
+<p>First we introduce the basic syntax needed for
+the exercises.  An optional later part
+introduces more features that might be useful
+in a more elaborate project.</p>
+<p>adder.html image</p>
+<p>You see colored markup for a simple form above.
+A form requires two more markup tags, <code class="docutils literal"><span class="pre">form</span></code> and <code class="docutils literal"><span class="pre">input</span></code>.</p>
+<p>Unlike the opening markup for tags introduced so far,
+they include not only the tag name, but also
+<em>attributes</em> inside the angle brackets.
+Attributes have a standard format,
+with an attribute identifier, an equal sign,
+and a double-quoted string.
+Attributes are separated by whitespace.</p>
+<p>This is illustrated in line 10 for the form,
+with syntax coloring:  the identifier and equal signs are purple,
+and the quoted strings are green.</p>
+<p>In line 10 the form attributes are action, method and enctype.
+We will not mess with the atribute identifiers.
+The only things inside the opening tags that we will edit for new
+examples are the <em>contents of some of the green quoted strings</em>.
+This way it is not important inthis course
+for you to learn a bunch of html syntax.  You can copy models,
+and modify just quoted strings.</p>
+<p>A form can only appear nested inside the body.
+Input tags can only appear inside the form.</p>
+<p>Other tags like <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> do not need to be inside the form.
+They could be just inside the body, but to make sure I have a form,
+and nest all the input tags inside,
+I like to make the form take up the entire body,
+as in lines 10-24.</p>
+<p>The one form attribute that is important to set correctly is
+the <strong>action</strong> attribute.  This should be the server program
+that will act on the data coming from the inputs in the form.
+In this case that is adder.cgi.  Be sure you update this field
+when you copy to modify for a new page!</p>
+<p>The generic input tags used to get data in a form are
+like in lines 14 and 18.
+They typically have a separate label as part of the
+displayed text, like &#8220;Number 1:&#8221; and &#8220;Number 2:&#8221;.
+The browser shows a box for the user input.</p>
+<p>The most important attributes for us are the name and the value.</p>
+<p>The initial value attribute string is what the user sees inside the input box
+when the page is first displayed.
+When the user changes the text in the box, the new value is remembered to pass
+on to the cgi program.</p>
+<p>In order for the cgi program to know which value is which, the name
+attribute is used.  In cgi programs the form accessing methods like
+<code class="docutils literal"><span class="pre">getfirst</span></code> must have the first parameter match
+<em>the quoted string in the associated name attribute</em>.</p>
+<p>Forms can have any number of input fields like these, distinguished by
+their name attribute.</p>
+<p>They must always have one special input like in line 22:
+The attributes here are different: value and type.  The type must be
+&#8220;submit&#8221;.  With this type,
+the value attribute here does not appear in a user-editable input box.
+Instead it is the text on the <em>submit button</em>.  When the user clicks
+on that button, the browser immediately sends all the form&#8217;s input
+to the forms&#8217;s action attribute cgi program.  Then the next page viewed
+in the browser is the one produced by the cgi program.</p>
+</div>
+<div class="section" id="more-advance-form-tags-optional">
+<h3>More Advance Form Tags (optional)<a class="headerlink" href="#more-advance-form-tags-optional" title="Permalink to this headline">¶</a></h3>
+<p>You have probably seen other input and display mechanisms on web pages,
+like radio buttons and check boxes.</p>
+<p>You can see an example by running the pizza1.cgi URL in
+ref:<code class="docutils literal"><span class="pre">More-Advanced-Examples</span></code>.</p>
+<p>The form here is created in the cgi program from a template page,
+<code class="docutils literal"><span class="pre">pizzaOrderTemplate1.html</span></code>,
+which shows the syntax that you can copy for three more kinds of input:
+checkbox, radiobutton, and hidden.</p>
+<p>image pizzaOrderTemplate1.html</p>
+<p>Radio buttons allow you to make a unique choice among mutiple options in a group.
+If you click on one, and then another, the selection of the previous one is removed.
+Lines 18, 20, and 22 show a group of radio buttons, with text after each one describing it.
+They are radio buttons since that is the kind attribute &#8220;radio&#8221;.
+They form a group, because the name attribute is the same for each.
+The value of the checked one is passed to the cgi program.</p>
+<p>If you want to allow multiple simultaneous selections from a group,
+make the kind attribute be &#8220;checkbox&#8221;, as in lines 26, 28, 30, 32, 34.
+Other than the kind, the syntax in the form is like for radio buttons.
+In the cgi program, hiwever, you access the data diferently:
+read the results of a group of check boxes
+with the <code class="docutils literal"><span class="pre">getlist</span></code> method, that returns a list of the values of checked chekboxes.
+For instance if the user of this form checks for sausage, onions, and extra cheese,
+<code class="docutils literal"><span class="pre">form.getlist('topping')</span></code> returns <code class="docutils literal"><span class="pre">['sausage',</span> <span class="pre">'onions',</span> <span class="pre">'extra</span> <span class="pre">cheese']</span></code></p>
+<p>Finally, there is a major complication when wanting to go back and forth displaying
+a sequence of forms.  Even if you are running the same cgi program after each one,
+each call the the cgi program is independent:
+nothing is automatically remembered from the previous call the the cgi program.
+If you want to remember things defined in a previous call to the cgi program,
+you can embed input fields in a form with type attribute &#8220;hidden&#8221;.</p>
+<p>Here &#8220;input&#8221; is not referring to <em>user</em> input in the form:
+nothing about this tag is visible to the user of the form.
+The input is input <em>into the cgi program</em> from the the form.
+It can be read via its value attribute like a regular text field input,
+with no kind attribute.</p>
+</div>
+</div>
+<div class="section" id="introduction-to-static-pages-in-kompozer">
+<span id="introduction-to-static"></span><span id="index-3"></span><h2>Introduction to Static Pages in Kompozer<a class="headerlink" href="#introduction-to-static-pages-in-kompozer" title="Permalink to this headline">¶</a></h2>
+<p>This section introduces the Kompozer web page editor to create
+<em>static</em> pages. A <em>static</em> page is one that is created ahead of time
+and just opened and used as needed.  This is as opposed to a <em>dynamic</em> page,
+which is a custom page generated by software on demand, given some input
+parameters.</p>
+<p>Kompozer is used because it is free software, and is
+pretty easy to use, like a common word processor. Unlike a common
+word processor you will be able to easily look at the HTML markup
+code underneath. It is not necessary to know a lot about the
+details of the markup codes for HTML files to use Kompozer, but you
+can <em>see</em> the results of the markup.</p>
+<p>We will use static pages later as a part of making dynamic pages,
+using the static pages as templates in which we insert data
+dynamically.</p>
+<p>To creating static web pages</p>
+<ol class="arabic simple">
+<li>However you start Kompozer, go to the menu in Kompozer and select
+<span class="menuselection">File ‣ New</span>.
+You will get what looks like an empty document.</li>
+<li>Look at the bottom of your window. You should see a <strong>Normal</strong>
+tab selected, with other choices beside it, including a <strong>Source</strong>
+tab. Click on the <strong>Source</strong> tab. You should see that, though you
+have added no content, you already have the basic markup to start an
+html page!</li>
+<li>Click again on the Normal tab to go back to the Normal view (of
+no content at the moment).</li>
+<li>Assume you are making a home page for yourself. Make a title and
+some introductory text. Use regular word processor features like
+marking your title as Heading 1 in the drop down box on a menu bar.
+(The drop down menu may start off displaying &#8216;Paragraph&#8217; or &#8216;Body
+Text&#8217;.) You can select text and make it bold or italics; enlarge it
+... using the editing menu or icons.</li>
+<li>Before getting too carried away, save your document as
+index.html in the existing
+<em>www directory under your earlier Python examples</em>. It will save a
+lot of trouble if you keep your web work together in this www
+directory, where I have already placed a number of files that you will
+want to keep together in one directory.</li>
+<li>Just for comparison, switch back and forth between the Normal
+and Source views to see all that has gone on underneath your view,
+particularly if you edited the format of your text. Somewhere
+embedded in the Source view you should see all the text you
+entered. Some individual characters have special symbols in HTML
+that start with an ampersand and end with a semicolon. Again,
+it is more important the understand that there are two
+different views than to be able to reproduce the Source view from
+memory.</li>
+<li>You can use your web browser to see how your file looks outside
+the editor. The easiest way to do this is to go to the web
+browser&#8217;s menu and select something like
+<span class="menuselection">File ‣ Open File</span>, and find the index.html
+file you just wrote. It should look pretty similar to the way it looked in
+Kompozer, but if you had put in hyperlinks, they should now be
+active.</li>
+</ol>
+<p>The discussion of web page editing continues in
+<a class="reference internal" href="dynamic.html#editing-html-forms"><span>Editing HTML Forms</span></a>, but first we get
+Python into the act.</p>
+</div>
+<div class="section" id="editing-and-testing-different-document-formats">
+<span id="editing-and-testing"></span><span id="index-4"></span><h2>Editing and Testing Different Document Formats<a class="headerlink" href="#editing-and-testing-different-document-formats" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In this chapter you will be working with several different types of
+documents that you will edit and test in very different ways. The
+ending of their names indicate their use.</p>
+</div>
+<p>Each time a new type of
+file is discussed in later sections, the proper ways to work with
+it will be repeated, but with all the variations, it is useful to
+group them all in one place now:</p>
+<dl class="docutils">
+<dt>...Web.py</dt>
+<dd><em>My</em> convention for regular Python programs taking
+all their input from the keyboard, and producing output displayed
+on a web page. These programs can be run like other Python
+programs, directly from an operating system folder or from inside
+Idle.  They are not a final product, but are a way of breaking
+the development process into steps.</dd>
+<dt>...cgi</dt>
+<dd>Python program to be started from a web browser and run by a web server.
+You will develop code using a local web server on your own machine.</dd>
+<dt>...html</dt>
+<dd><p class="first">Web documents most often composed in an editor like
+Kompozer. By <em>my</em> convention, these have a sub-categories</p>
+<dl class="docutils">
+<dt>...Template.html</dt>
+<dd>not intended to be
+displayed directly in a browser, but instead are read by a Python
+program (...cgi or ...Web.py) to create a template or format string
+for a final web page that is dynamically generated inside the
+Python program.</dd>
+</dl>
+<p class="last">Other files ending in .html are intended to be directly viewed
+in a web browser. Except for the simple static earlier examples in
+<a class="reference internal" href="#introduction-to-static"><span>Introduction to Static Pages in Kompozer</span></a>, they are designed to reside on
+a web server, and include forms that can pass information to a Python CGI
+program (...cgi).</p>
+</dd>
+</dl>
+<p id="index-5">To make this work on your computer:</p>
+<ol class="arabic simple">
+<li>Have all the web pages in the same directory as the example
+program localCGIServer.py.  It is easiest to leave it in the www
+subdirectory of your examples directory.</li>
+<li>Looking ahead to when we get to using a server dynamically
+(<a class="reference internal" href="dynamic.html"><em>CGI - Dynamic Web Pages</em></a>):<ol class="arabic">
+<li>Include the Python CGI server programs in the same directory.</li>
+<li>Have localCGIServer.py running, started from a directory window,
+<em>not from inside Idle</em></li>
+<li>In the browser URL field, <em>the web page file name must be</em>
+<em>preceded by</em> <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a>. For example,
+<a class="reference external" href="http://localhost:8080/adder.html">http://localhost:8080/adder.html</a> would refer to the file
+adder.html, in the same directory as the running
+localCGIServer.py.  The URL may either by an html file or
+possibly a CGI file.  For example, <a class="reference external" href="http://localhost:8080/now.cgi">http://localhost:8080/now.cgi</a>
+would call the file now.cgi (assuming it is in the same directory as
+the running localCGIServer.py).</li>
+<li>Most often CGI programs are
+referenced in a web form, and the program is called <em>indirectly</em> by
+the web server. CGI programs can be edited and saved inside Idle,
+but they do <em>not</em> run properly from inside Idle.  They must be run
+via the server/browser combination.  More on this later.</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Web page Basics</a><ul>
+<li><a class="reference internal" href="#format-of-web-page-markup">Format of Web Page Markup</a><ul>
+<li><a class="reference internal" href="#introduction-to-html-sourcecode">Introduction to HTML sourcecode</a></li>
+<li><a class="reference internal" href="#html-form-markup">HTML Form Markup</a></li>
+<li><a class="reference internal" href="#more-advance-form-tags-optional">More Advance Form Tags (optional)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#introduction-to-static-pages-in-kompozer">Introduction to Static Pages in Kompozer</a></li>
+<li><a class="reference internal" href="#editing-and-testing-different-document-formats">Editing and Testing Different Document Formats</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/webmix.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2019, Dr. Andrew N. Harrington.
+      Last updated on Nov 08, 2019.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1+.
+    </div>
+  </body>
+</html>

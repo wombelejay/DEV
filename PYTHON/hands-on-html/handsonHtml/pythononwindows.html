@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.2. Some Special Windows Instructions &mdash; Hands-on Python Tutorial for Python 3</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <link rel="top" title="Hands-on Python Tutorial for Python 3" href="index.html" />
+    <link rel="up" title="5. Appendices" href="appendices.html" />
+    <link rel="next" title="5.3. Some Special Mac Instructions" href="pythononmac.html" />
+    <link rel="prev" title="5.1. Using Error Messages" href="usingerrormessages.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pythononmac.html" title="5.3. Some Special Mac Instructions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="usingerrormessages.html" title="5.1. Using Error Messages"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" accesskey="U">5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="some-special-windows-instructions">
+<span id="index-0"></span><h1>5.2. Some Special Windows Instructions<a class="headerlink" href="#some-special-windows-instructions" title="Permalink to this headline">¶</a></h1>
+<p>While the Python language changes slowly, operating systems and setup methods change
+more rapidly with succeeding versions.
+The attempt here is to keep all such information in one place for the Windows operating system.
+It may become out of date at any time.</p>
+<p>&#8211; Last checked this on Windows 10 and Windows 7 with Python 3.7.</p>
+<div class="section" id="versions">
+<h2>5.2.1. Versions<a class="headerlink" href="#versions" title="Permalink to this headline">¶</a></h2>
+<p>I will use Python 3.8+ to mean the current version of Python, with version number at least
+3.8.1.  Make sure you have the latest recommended version installed from <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>.
+Download the Windows version.
+<em>Read this section before doing any installation.</em>  In particular note paragraph below with italics in it.</p>
+<p>If the only option is to save it, agree, and find it in your download folder and double click to execute it.  If you have an option to immediately run on download, you can choose that.</p>
+<p>You are likely to get a security message before running.  Click Run.</p>
+<p>Pay attention:  <em>before clicking on Install Now</em>, note if there are check-boxes at the bottom of a window you see.  Make sure <em>both</em> are checked, about the Python Launcher AND to add Python to environment variables.</p>
+<p>The final screen that you reach in the installation
+links to more advanced references than we will want in this course, so probably skip them for now.</p>
+<p>Python now behaves differently if you installed a previous version before (like me).  I could have missed something for someone installing Python for the first time.  Feel free for me to watch you while you share your screen in Zoom.</p>
+<p>If you install Python <em>without</em> putting a check mark on Add Python to environment variables, then you can go back and fix it.  This is important for Ch 4:</p>
+<ol class="arabic">
+<li><p class="first">Run the Python installation script again.  Since python is already there it looks different when it starts -
+the first option is modify; click on that.</p>
+</li>
+<li><p class="first">Just click Next on the second screen</p>
+</li>
+<li><p class="first">On the following screen is where you make a change:  Click to put a checkmark in front of the line saying:</p>
+<blockquote>
+<div><p>Add Python to environment variables.</p>
+</div></blockquote>
+<p>Then click next/continue/finish - whatever to just advance to the end.</p>
+</li>
+</ol>
+<p>You are encouraged to test if Python did get added to the environment by starting Idle
+as discussed on the next section.</p>
+</div>
+<div class="section" id="starting-idle-shortcut">
+<h2>5.2.2. Starting Idle Shortcut<a class="headerlink" href="#starting-idle-shortcut" title="Permalink to this headline">¶</a></h2>
+<p>If you want to start Idle without a starting file,
+but later deal with files in the examples folder,
+then a one-step shortcut is to double click on the
+file <code class="file docutils literal"><span class="pre">IdleOnWindows.cmd</span></code> in the examples folder.
+If this does not work (in Windows),
+then go back and modify your Python installation,
+as discussed in the previous section.</p>
+<p>If you want to do extensive Idle work in another folder,
+you can copy <code class="file docutils literal"><span class="pre">IdleOnWindows.cmd</span></code> to there and use it.</p>
+</div>
+<div class="section" id="file-names-in-the-file-explorer">
+<h2>5.2.3. File Names in the File Explorer<a class="headerlink" href="#file-names-in-the-file-explorer" title="Permalink to this headline">¶</a></h2>
+<p>By default Windows does not display file extensions in File Explorer Windows.
+You may have multiple files with the same base name but different
+extensions.  Particularly if you want to attach one to an email or
+homework submission, this can lead to problems.</p>
+<p>You are strongly suggested to change the viewing default in File Explorer to show extensions.</p>
+</div>
+<div class="section" id="chapter-4-cgi-instructions">
+<h2>5.2.4. Chapter 4 CGI Instructions<a class="headerlink" href="#chapter-4-cgi-instructions" title="Permalink to this headline">¶</a></h2>
+<p>You can skip this until you are starting Chapter 4.4 on CGI files.</p>
+<div class="section" id="opening-cgi-files-in-idle">
+<h3>5.2.4.1. Opening .cgi Files in Idle<a class="headerlink" href="#opening-cgi-files-in-idle" title="Permalink to this headline">¶</a></h3>
+<p>By convention the server programs that you will be writing end in &#8221;.cgi&#8221;.
+That is not an extension that is automatically associated with Idle for editing.
+If you want to open a .cgi file (or any other type but .py)
+to edit (and never run) from inside of Idle, it is possible to do this directly in many
+steps, but it is easier to go indirectly:</p>
+<ul class="simple">
+<li>Start a .py file you have in Idle (like localCGIServer.py),
+or if <code class="file docutils literal"><span class="pre">IdleOnWindows.cmd</span></code> is there, as in my www folder,
+use it to start Idle.</li>
+<li>To open a .cgi file
+from <em>inside</em> Idle, you select Open form the File menu like normally, but then
+notice the drop-down choice in the lower right of the file open window that
+probably shows Python files (<em>.py):  Change this file filter to All files (</em>.*).</li>
+<li>Then all files in the current folder should be listed, not grayed out,
+and you can navigate to and choose the one you want.</li>
+</ul>
+</div>
+<div class="section" id="saving-a-new-cgi-file">
+<h3>5.2.4.2. Saving a new .cgi file<a class="headerlink" href="#saving-a-new-cgi-file" title="Permalink to this headline">¶</a></h3>
+<p>As with opening a .cgi file, set the format filter at the bottom of the dialog window to
+All files (<em>.</em>).  Then enter the full file name with the .cgi.
+If you forget and do not change the file filter, a &#8221;.py&#8221; will be added to your file name.
+Then you can rename it in File Explorer.</p>
+</div>
+<div class="section" id="running-cgi-scripts">
+<h3>5.2.4.3. Running CGI Scripts<a class="headerlink" href="#running-cgi-scripts" title="Permalink to this headline">¶</a></h3>
+<p>If you insist on doing cgi work in a different folder, copy both startServer.cmd and localCGIServer.py
+as well as all related .html and .cgi files to that folder,
+and then when you want to test your work, start the local server from <em>there</em> with startServer.cmd.</p>
+<p>At this point you can do all the web server based activities in Chapter 4.
+There are a number of steps: be sure you carefully go through the list in the tutorial.
+Remember, html files calling a cgi file, and cgi files used directly are <em>only</em> run in your web browser
+with a URL starting with localhost:8080/, and only <em>after</em> you have a local server running
+from the <em>same</em> folder.  Otherwise nothing dynamic happens.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.2. Some Special Windows Instructions</a><ul>
+<li><a class="reference internal" href="#versions">5.2.1. Versions</a></li>
+<li><a class="reference internal" href="#starting-idle-shortcut">5.2.2. Starting Idle Shortcut</a></li>
+<li><a class="reference internal" href="#file-names-in-the-file-explorer">5.2.3. File Names in the File Explorer</a></li>
+<li><a class="reference internal" href="#chapter-4-cgi-instructions">5.2.4. Chapter 4 CGI Instructions</a><ul>
+<li><a class="reference internal" href="#opening-cgi-files-in-idle">5.2.4.1. Opening .cgi Files in Idle</a></li>
+<li><a class="reference internal" href="#saving-a-new-cgi-file">5.2.4.2. Saving a new .cgi file</a></li>
+<li><a class="reference internal" href="#running-cgi-scripts">5.2.4.3. Running CGI Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="usingerrormessages.html"
+                        title="previous chapter">5.1. Using Error Messages</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pythononmac.html"
+                        title="next chapter">5.3. Some Special Mac Instructions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pythononwindows.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pythononmac.html" title="5.3. Some Special Mac Instructions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="usingerrormessages.html" title="5.1. Using Error Messages"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" >5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2019, Dr. Andrew N. Harrington.
+      Last updated on Jan 10, 2020.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1+.
+    </div>
+  </body>
+</html>

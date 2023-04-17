@@ -1,0 +1,121 @@
+MEMO TRAINING PYTHON
+
+CHAPTER 1 :
+
+assignment statement = attribution de donnéees à une variable
+
+Example : 
+description="""
+this a dedscription of the content related to this issue
+"""
+
+function definition:
+
+Example: 
+def get_vars():
+	logTypes = dict() ''' Assigment statement to define logTypes as a empty dictionnaty'''
+
+
+
+CHAPTER 1.3: TYPES AND DATA IN PYTHON
+
+Python register different type of variables 
+int float string list
+
+type(1) '''Print the type of a element in python '''
+<class 'int'>
+
+len('hello') '''Print the lenght of a list or string
+
+TYPES=list(['adastra','crusher','frontier'])
+
+CHAPTER 1.4: INTEGER AND ARITHMETIC
+
+Example: 
+>>> test=2+2
+>>> test
+4
+>>>
+>>>
+>>> 2 x 3
+  File "<stdin>", line 1
+    2 x 3
+      ^
+SyntaxError: invalid syntax
+>>>
+>>>
+>>> 2*3
+6
+>>> 2 - 8 * 5 - 19
+-57
+>>> (2 - 8) * 5 - 19
+-49
+>>> (2 - 8) * (5 - 19)
+84
+>>> 5 * (2 + 3
+... )
+25
+
+DIVISIONS et RESTE
+>>> 14/4
+3.5
+>>> 14//4
+3
+>>> 14%4 ''' Calcul du reste d une division
+2
+>>>
+
+CHAPTER 1.5 : STRINGS 
+
+Strings Delimiter
+we can use quotes ("" or '') to delimitate strings in python
+A good combination of these quotes is necessary when using them to represent corretly an idea or words.
+
+Strings concatenation
+"I'm Happy"
+"I'm Happy"
+>>> "Hello"
+'Hello'
+>>> type('dog')
+<class 'str'>
+>>> type('7')
+<class 'str'>
+>>> type(7)
+<class 'int'>
+>>>
+>>> "I'm" + "Happy"
+"I'mHappy"
+>>> "I'm" + " Happy"
+"I'm Happy"
+>>> 3 * "I'm" + " Happy"
+"I'mI'mI'm Happy"
+>>> 7+2
+9
+>>> '7' + '2'
+'72'
+>>> '7' + 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must be str, not int
+>>> int('7') + 2
+9
+>>> 3*'Yes'
+'YesYesYes'
+>>> 3 * ('Maybe' 'Yes')
+'MaybeYesMaybeYesMaybeYes'
+>>> 3*'Maybe' 3*'Yes'
+  File "<stdin>", line 1
+    3*'Maybe' 3*'Yes'
+              ^
+SyntaxError: invalid syntax
+>>> 3 *'Maybe' + 3 * 'Yes'
+'MaybeMaybeMaybeYesYesYes'
+>>> 3 *'Maybe' + 5 * 'Yes'
+'MaybeMaybeMaybeYesYesYesYesYes'
+>>>
+
+
+CHAPTER 1.6 : VARIABLES AND ASSIGNMENT
+The plus + sign is used to addition or concatenante 2 or multiple elements (string of number) together.
+
+

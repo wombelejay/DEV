@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.1. Overview &mdash; Hands-on Python Tutorial for Python 3</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <link rel="top" title="Hands-on Python Tutorial for Python 3" href="index.html" />
+    <link rel="up" title="4. Dynamic Web Pages" href="ch4.html" />
+    <link rel="next" title="4.2. Web page Basics" href="webbasics.html" />
+    <link rel="prev" title="4. Dynamic Web Pages" href="ch4.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="webbasics.html" title="4.2. Web page Basics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ch4.html" title="4. Dynamic Web Pages"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="ch4.html" accesskey="U">4. Dynamic Web Pages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="overview">
+<h1>4.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>This chapter leads up to the creation of dynamic web pages. These
+pages and supporting programs have you using a simple
+Python web server available on your local machine. If you
+have access, the pages and programs may be uploaded to a public
+server accessible to anyone on the Internet.</p>
+<p>A few disclaimers:</p>
+<ul>
+<li><p class="first">This tutorial does not cover uploading to an account on a public
+server.</p>
+</li>
+<li><p class="first">No core Python syntax is introduced in this Chapter. Only a few
+methods in a couple of Python library modules are introduced.</p>
+</li>
+<li><p class="first">The chapter is by no means a major source of information about
+specific HTML codes. The appendix <a class="reference internal" href="htmlsource.html"><em>HTML Source Markup</em></a> introduces
+the limited source code for the html markup needed for the
+dynamic web exercises, and a bit more.  Beyond that you can
+avoid dealing with specific codes with the use of a modern
+word-processor-like HTML editor. As a specific example, the open
+source HTML editor Kompozer is discussed, plus a little bit about
+the Mac application textedit, since Kompozer is not available for
+OSX versions from Catalina on.</p>
+</li>
+<li><p class="first">You need to work in a folder
+<em>where all the folders above it, up to the root folder</em>
+<em>for your hard drive, have no blanks in the name</em>.
+As long as your home folder
+has no blank in the name, the folder can be under that, like
+on your Desktop or in your Documents.</p>
+<p>If you <em>do</em> have a blank in the name of your home folder,
+you will need to keep the files for this Chapter elsewhere.
+That may mean a separate folder on yur hard drive or on
+a removable drive like a flash drive.</p>
+<p>If the examples subfolder www is not in a place with
+all further up folders having no blank in the names,
+then move it now.</p>
+</li>
+</ul>
+<p>The chapter does allow you to understand the overall interaction
+between a browser (like Firefox on your local machine) and a web
+server and to create dynamic web content with Python. We treat
+interaction with the web basically as a mechanism to get input into
+a Python program and data back out and displayed. Web pages
+displayed in your browser are used for both the input and the
+output. The advantage of a public server is that it can also be
+used to store data accessible to people all over the world.</p>
+<p>There are a number of steps in the development in this chapter, so
+I start with an overview:</p>
+<ol class="arabic simple">
+<li>A few bits about the basic format of <em>hypertext markup language</em>
+are useful to start.</li>
+<li>The simplest <em>static</em> pages can be written with a word-processor.
+or by modifying simple html source examples.</li>
+<li>Next we look at pages generated <em>dynamically</em>. An easy way to
+accomplish this is to create specialized static pages to act as
+templates into which the dynamic data is easily embedded. Web page
+creation can be tested totally locally, by creating HTML files and
+pointing your web browser to them. Initially we supply input data
+by our traditional means (keyboard input or function parameters),
+and concentrate on having our Python program <em>convert</em> the input to
+the desired html output, and <em>display</em> this output in a web page.</li>
+<li>We generate data from within a web page, using web forms.
+Initially we will test web forms by
+automatically dumping their raw data.</li>
+<li>To fully integrate a browser and server, we<ol class="loweralpha">
+<li>use web forms to provide data,</li>
+<li>use a Python program specified on the server, called a <em>CGI script</em>, to
+access the web form data and transform the input data into the desired output,</li>
+<li>embed the output in a new dynamic web page that gets sent back to your
+browser. This Python server program transforms the input data, and
+generates output web pages much like we did in step 3, above.</li>
+</ol>
+</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ch4.html"
+                        title="previous chapter">4. Dynamic Web Pages</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="webbasics.html"
+                        title="next chapter">4.2. Web page Basics</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/weboverview.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="webbasics.html" title="4.2. Web page Basics"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ch4.html" title="4. Dynamic Web Pages"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="ch4.html" >4. Dynamic Web Pages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2019, Dr. Andrew N. Harrington.
+      Last updated on Jan 05, 2020.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1+.
+    </div>
+  </body>
+</html>

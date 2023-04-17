@@ -1,0 +1,475 @@
+.. index::
+   single: web page; basics
+
+Web page Basics
+===============
+
+.. _Format-of-Web:
+    
+Format of Web Page Markup
+-------------------------
+
+Documents can be presented in many forms. A simple editor like Idle
+or Windows Notepad produce plain text: essentially a long string
+of meaningful characters that appear directly in the final text you view.
+
+Documents can be displayed with formatting of parts of the
+document. Web pages allow mixtures of different fonts, italic, and boldfaced
+emphases, and different sized text. Microsoft
+Word, Open Office, and TextEdit, and Pages, all display documents with various
+amounts of formatting. The syntax for the ways different systems
+*encode* the formatting information varies enormously.
+
+If you look at an old Microsoft Word .doc document in a plain text editor
+like Notepad, you should be able to find the original text buried
+inside, but most of the symbols associated with the formatting are
+unprintable gibberish as far as a human is concerned.
+
+.. index::
+   web page; tags
+   <...> web page tags
+   tags in web pages
+
+Hypertext markup language (HTML) is very different in that regard.
+It produces a file of entirely human-readable characters, that
+could be produced with a plain text editor, but the *markup*
+parts of the file do not appear directly in your browser --
+instead they instruct the browser how to format the page.
+
+For instance in HTML, the largest size of a heading with the text
+"Web Introduction", would look like
+
+    <h1>Web Introduction</h1>
+
+The heading format is indicated by bracketing the heading text 'Web
+Introduction' with markup sequences, <h1> beforehand, and </h1>
+afterward. All HTML markup is delimited by *tags* enclosed in angle
+brackets, and most tags come in pairs, surrounding the information
+to be formatted. The end tag has an extra '/'. Here 'h' stands for
+heading, and the number indicates the relative importance of the
+heading. (There is also h2, h3, .... for smaller headings.) In the
+early days of HTML, editing was done in a plain text editor, with
+the tags being directly typed in by people who memorized all the
+codes!
+
+.. index::
+   web page; Kompozer
+   Kompozer
+
+With the enormous explosion of the World Wide Web, specialized
+software has been developed to make web editing be much like word
+processing, with a graphical interface, allowing formatting to be
+done by selecting text with a mouse and clicking menus and icons
+labeled in more natural language. The software then automatically
+generates the necessary markup. An example used in these tutorials
+is the free, open source Kompozer from
+https://sourceforge.net/projects/kompozer/. It downloads the appropriate version
+for either a Windows machine or for OSX versions *older than Catalina*.
+You might download it if you are not already using another environment that lets 
+you see both the unformatted plain text and the formatted view.
+
+If your operating system supports Kompozer, 
+you can open it and easily generate a document with a heading,
+and italic and boldfaced portions....
+
+An advantage of Kompozer is that by merely clicking on a different bottom tab, 
+you can see either the raw html source text or a view like you would see in a browser.
+
+If you use a plain text editor to generate the html source, 
+then you have extra steps to look at the formatted view:
+You need to save the file, and separately load it into a browser.
+
+A disadvantage of Kompozer, when working in html source view,
+is that the syntax is not color coded.  
+You may want (or need) to skip Kompozer and just use an editor like Sublime Text.
+
+Introduction to HTML sourcecode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See the image of the raw html for hello.html.  
+
+image
+
+I use a convenient plain text editor, Sublime Text (free download) 
+that colors the syntax of html source, much as Idle colors Python syntax.
+
+The only text that you see in the browser is what appears in the image as black.
+Everything else is markup.  Markup tag names are red.
+
+Most of the markup is boilerplate -
+I am not going to explain it much.
+
+In particular all the part through the opening tag for the body, <body>,
+in lines 1-7 is standard, except for the bit in black, inside the title markup,
+on line 4.  This title appears in the tab label in your browser, 
+not inside the formatted page.
+
+The only parts you actually see on the page are inside the body:
+here the body contents are in lines 8-11.
+
+You are likely to want to start with a heading.  
+Line 8 uses the ``<h1>`` markup to create a main heading.
+
+I spaced the text in the body in a strange way, to illustrate
+a major feature of html: It reformats if you change the window width.
+That means the browser generally chooses the places to wrap to the next line.
+In particular *any amount of white space*, including newlines in your
+raw text, are merely treated as a place 
+where *there could be a break to the next line*, 
+or it could just display as a single space before the next word.
+
+This compression of white space also means that I can indent 
+to note help me keep track of
+multi-line contents between opening and closing markup,
+and this does not change the html formatting.
+
+Unless you have an extremely narrow window where you display 
+hello.html in your browser, you should see "Hello, world!"
+all on one line.  The newline after "Hello," in the raw text 
+and the blanks before "world",
+just turn into a single space.
+
+Sometimes you want an explicit line break, that shows in the browser.
+The ``<br>`` markup forces a line break.
+In hello.html, that means that no matter how wide your browser window is,
+you will always see "It is a fine day." 
+starting on a line *after* "Hello, world!".  
+
+The final two lines 11-12 are also standard boilerplate, 
+closing the markup that was started earlier 
+for the body and the entire html section.
+
+There is plenty of more formatting markup, for fonts, text size and colors, 
+paragraph styles, ...
+that is not discussed here.  
+Common document editors like Microsoft
+Word, Open Office, and TextEdit,
+*do* allow you to generate static html files.  
+However the source html text is NOT visible through these editors,
+and they all add lots of extra formatting information in the html source
+that greatly lengthens the file.  Also, 
+such editors cannot handle html *forms*, discussed in an appendix.
+
+Special characters
+
+We had markup in Python string literal notation for special characters.  
+For the strings the markup all started with the backslash character, 
+so '\n' is a newline, '\\' is a displayed backslash ....
+
+In html ``<`` and ``>`` have special meaning, 
+so if we want to *see* those symbols in the browser,
+we need a special substitute for the individual characters in the raw html.
+Those substitutes start with an ampersand (&) and end with a semicolon (;),
+with an abbreviation in between:
+
+  | ``<`` is replaced by &lt;
+  | ``>`` is replaced by &gt;
+  | ``&`` is replaced by &amp;
+  
+Since ``&`` now is used for character markup, we need the ``&amp;`` 
+to *display* an ampersand in the browser.
+
+The collapsing of whitespace sequences is also a special feature of html.
+If you really want more spaces in sequence,
+you can use a character that looks like a space,
+but is not considered as whitespace by the html formatter.
+The character markup is ``&nbsp;`` for 
+Non-Breaking SPace. 
+
+HTML Form Markup
+~~~~~~~~~~~~~~~~~~
+
+For a page that is totally static, 
+or just displaying output from a 
+server cgi program, you do not need
+form syntax.  
+However if you want the user to input data into
+a cgi program from a web page, then you need a form. 
+
+First we introduce the basic syntax needed for
+the exercises.  An optional later part
+introduces more features that might be useful
+in a more elaborate project.
+
+adder.html image
+
+You see colored markup for a simple form above.
+A form requires two more markup tags, ``form`` and ``input``.
+
+Unlike the opening markup for tags introduced so far, 
+they include not only the tag name, but also 
+*attributes* inside the angle brackets.
+Attributes have a standard format, 
+with an attribute identifier, an equal sign,
+and a double-quoted string.  
+Attributes are separated by whitespace.
+
+This is illustrated in line 10 for the form,
+with syntax coloring:  the identifier and equal signs are purple,
+and the quoted strings are green.
+
+In line 10 the form attributes are action, method and enctype.
+We will not mess with the atribute identifiers.  
+The only things inside the opening tags that we will edit for new 
+examples are the *contents of some of the green quoted strings*.
+This way it is not important inthis course
+for you to learn a bunch of html syntax.  You can copy models,
+and modify just quoted strings.
+
+A form can only appear nested inside the body.
+Input tags can only appear inside the form.
+
+Other tags like ``<h1>`` do not need to be inside the form.
+They could be just inside the body, but to make sure I have a form,
+and nest all the input tags inside,
+I like to make the form take up the entire body,
+as in lines 10-24.
+
+The one form attribute that is important to set correctly is
+the **action** attribute.  This should be the server program
+that will act on the data coming from the inputs in the form.
+In this case that is adder.cgi.  Be sure you update this field
+when you copy to modify for a new page!
+
+The generic input tags used to get data in a form are
+like in lines 14 and 18.  
+They typically have a separate label as part of the
+displayed text, like "Number 1:" and "Number 2:".
+The browser shows a box for the user input.
+
+The most important attributes for us are the name and the value.
+
+The initial value attribute string is what the user sees inside the input box
+when the page is first displayed.
+When the user changes the text in the box, the new value is remembered to pass
+on to the cgi program.
+
+In order for the cgi program to know which value is which, the name
+attribute is used.  In cgi programs the form accessing methods like
+``getfirst`` must have the first parameter match 
+*the quoted string in the associated name attribute*.
+
+.. warning:
+   A common cause of errors is not editing a form 
+   and the cgi program called by it 
+   to make sure that these names *match*.
+
+Forms can have any number of input fields like these, distinguished by 
+their name attribute.  
+
+They must always have one special input like in line 22:
+The attributes here are different: value and type.  The type must be
+"submit".  With this type, 
+the value attribute here does not appear in a user-editable input box.
+Instead it is the text on the *submit button*.  When the user clicks
+on that button, the browser immediately sends all the form's input
+to the forms's action attribute cgi program.  Then the next page viewed
+in the browser is the one produced by the cgi program.
+
+More Advance Form Tags (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You have probably seen other input and display mechanisms on web pages,
+like radio buttons and check boxes.
+
+You can see an example by running the pizza1.cgi URL in
+ref:``More-Advanced-Examples``.
+
+The form here is created in the cgi program from a template page,
+``pizzaOrderTemplate1.html``,
+which shows the syntax that you can copy for three more kinds of input:
+checkbox, radiobutton, and hidden.
+
+image pizzaOrderTemplate1.html
+
+Radio buttons allow you to make a unique choice among mutiple options in a group.
+If you click on one, and then another, the selection of the previous one is removed.
+Lines 18, 20, and 22 show a group of radio buttons, with text after each one describing it.
+They are radio buttons since that is the kind attribute "radio".  
+They form a group, because the name attribute is the same for each.  
+The value of the checked one is passed to the cgi program.
+
+If you want to allow multiple simultaneous selections from a group, 
+make the kind attribute be "checkbox", as in lines 26, 28, 30, 32, 34.  
+Other than the kind, the syntax in the form is like for radio buttons.
+In the cgi program, hiwever, you access the data diferently:
+read the results of a group of check boxes
+with the ``getlist`` method, that returns a list of the values of checked chekboxes.
+For instance if the user of this form checks for sausage, onions, and extra cheese,
+``form.getlist('topping')`` returns ``['sausage', 'onions', 'extra cheese']``
+
+Finally, there is a major complication when wanting to go back and forth displaying
+a sequence of forms.  Even if you are running the same cgi program after each one,
+each call the the cgi program is independent:  
+nothing is automatically remembered from the previous call the the cgi program.
+If you want to remember things defined in a previous call to the cgi program,
+you can embed input fields in a form with type attribute "hidden".  
+
+Here "input" is not referring to *user* input in the form: 
+nothing about this tag is visible to the user of the form.  
+The input is input *into the cgi program* from the the form.
+It can be read via its value attribute like a regular text field input, 
+with no kind attribute.
+
+
+
+
+
+
+
+
+.. index::
+   single: web page; static
+
+.. _Introduction-to-Static:
+    
+Introduction to Static Pages in Kompozer
+----------------------------------------
+
+This section introduces the Kompozer web page editor to create
+*static* pages. A *static* page is one that is created ahead of time
+and just opened and used as needed.  This is as opposed to a *dynamic* page,
+which is a custom page generated by software on demand, given some input
+parameters.
+
+Kompozer is used because it is free software, and is
+pretty easy to use, like a common word processor. Unlike a common
+word processor you will be able to easily look at the HTML markup
+code underneath. It is not necessary to know a lot about the
+details of the markup codes for HTML files to use Kompozer, but you
+can *see* the results of the markup.
+
+We will use static pages later as a part of making dynamic pages,
+using the static pages as templates in which we insert data
+dynamically.
+
+To creating static web pages
+
+#. However you start Kompozer, go to the menu in Kompozer and select
+   :menuselection:`File --> New`.
+   You will get what looks like an empty document.
+
+#. Look at the bottom of your window. You should see a **Normal**
+   tab selected, with other choices beside it, including a **Source**
+   tab. Click on the **Source** tab. You should see that, though you
+   have added no content, you already have the basic markup to start an
+   html page!
+
+#. Click again on the Normal tab to go back to the Normal view (of
+   no content at the moment).
+
+#. Assume you are making a home page for yourself. Make a title and
+   some introductory text. Use regular word processor features like
+   marking your title as Heading 1 in the drop down box on a menu bar.
+   (The drop down menu may start off displaying 'Paragraph' or 'Body
+   Text'.) You can select text and make it bold or italics; enlarge it
+   ... using the editing menu or icons.
+
+#. Before getting too carried away, save your document as
+   index.html in the existing
+   *www directory under your earlier Python examples*. It will save a
+   lot of trouble if you keep your web work together in this www
+   directory, where I have already placed a number of files that you will
+   want to keep together in one directory.
+
+#. Just for comparison, switch back and forth between the Normal
+   and Source views to see all that has gone on underneath your view,
+   particularly if you edited the format of your text. Somewhere
+   embedded in the Source view you should see all the text you
+   entered. Some individual characters have special symbols in HTML
+   that start with an ampersand and end with a semicolon. Again,
+   it is more important the understand that there are two
+   different views than to be able to reproduce the Source view from
+   memory.
+
+#. You can use your web browser to see how your file looks outside
+   the editor. The easiest way to do this is to go to the web
+   browser's menu and select something like
+   :menuselection:`File --> Open File`, and find the index.html
+   file you just wrote. It should look pretty similar to the way it looked in
+   Kompozer, but if you had put in hyperlinks, they should now be
+   active.
+
+The discussion of web page editing continues in
+:ref:`Editing-HTML-Forms`, but first we get
+Python into the act.
+
+.. index::
+   single: web page; document naming conventions
+
+.. _Editing-and-Testing:
+    
+Editing and Testing Different Document Formats
+----------------------------------------------
+
+.. note::
+   In this chapter you will be working with several different types of
+   documents that you will edit and test in very different ways. The
+   ending of their names indicate their use.
+
+Each time a new type of
+file is discussed in later sections, the proper ways to work with
+it will be repeated, but with all the variations, it is useful to
+group them all in one place now:
+
+...Web.py
+    *My* convention for regular Python programs taking
+    all their input from the keyboard, and producing output displayed
+    on a web page. These programs can be run like other Python
+    programs, directly from an operating system folder or from inside
+    Idle.  They are not a final product, but are a way of breaking
+    the development process into steps.
+
+...cgi
+   Python program to be started from a web browser and run by a web server.
+   You will develop code using a local web server on your own machine. 
+
+...html
+    Web documents most often composed in an editor like
+    Kompozer. By *my* convention, these have a sub-categories
+
+    ...Template.html
+        not intended to be
+        displayed directly in a browser, but instead are read by a Python
+        program (...cgi or ...Web.py) to create a template or format string
+        for a final web page that is dynamically generated inside the
+        Python program.
+
+    Other files ending in .html are intended to be directly viewed
+    in a web browser. Except for the simple static earlier examples in
+    :ref:`Introduction-to-Static`, they are designed to reside on
+    a web server, and include forms that can pass information to a Python CGI
+    program (...cgi).
+
+.. index::
+   double: web page; localhost
+
+To make this work on your computer:
+        
+#. Have all the web pages in the same directory as the example
+   program localCGIServer.py.  It is easiest to leave it in the www
+   subdirectory of your examples directory.
+
+#.  Looking ahead to when we get to using a server dynamically
+    (:doc:`dynamic`):
+
+    #. Include the Python CGI server programs in the same directory.
+       
+    #. Have localCGIServer.py running, started from a directory window,
+       *not from inside Idle*
+
+    #. In the browser URL field, *the web page file name must be*
+       *preceded by* http://localhost:8080/. For example,
+       http://localhost:8080/adder.html would refer to the file
+       adder.html, in the same directory as the running
+       localCGIServer.py.  The URL may either by an html file or
+       possibly a CGI file.  For example, http://localhost:8080/now.cgi
+       would call the file now.cgi (assuming it is in the same directory as
+       the running localCGIServer.py).
+
+    #. Most often CGI programs are
+       referenced in a web form, and the program is called *indirectly* by
+       the web server. CGI programs can be edited and saved inside Idle,
+       but they do *not* run properly from inside Idle.  They must be run
+       via the server/browser combination.  More on this later.
+

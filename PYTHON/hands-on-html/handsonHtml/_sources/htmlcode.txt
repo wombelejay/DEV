@@ -1,0 +1,68 @@
+
+
+Basic HTML Features We Use
+============================
+
+See the image of the raw html for hello.html.  
+I use a convenient editor, Sublime Text (free download) 
+that colors the syntax, much as Idle colors Python syntax.
+
+The only text that you see in the browser is what appears in the image as black.
+Everything else is markup.
+
+The markup sections are enclosed in angle brackets ``<tag ... >``, at the start,
+like ``<h1>`` for a major heading.  Many have other things nested between 
+the starting part with angle brackets and final closing,
+</tag>, with the slash / before the tag, like </h1> for the end of a major heading.
+
+Most of the markup is boilerplate -
+I am not going to explain it much.
+
+In particular all the part through the opening tag for the body, <body>,
+in lines 1-8 is standard, except for the bit in black, inside the title markup,
+on line 5.  This title appears in the tab label in your browser.
+
+The only parts you actually see on the page are inside the body:
+here the body is lines 8-29.
+
+A heading is likely to start off the body,
+as I have in line 10.
+
+A big advantage of html is that it reformats if you change the window width.
+That means the browser generally chooses the places to wrap to the next line.
+In particular *any amount of white space*, including newlines in your
+raw text, are merely treated as a place 
+where *there could be a break to the next line*, 
+or it could just display as a single space before the next word.
+
+Unless you have an extremely narrow window where you display 
+adder.html in your browser, you should see "Enter two numbers:"
+all on one line.  The newline after "Enter" in the raw text 
+and the blanks before "two",
+just turn into a single space.
+
+Sometimes you want an explicit line break, that shows in the browser.
+We will discuss <br> later in the code.  
+
+
+Special characters
+
+We had markup in Python string literal notation for special characters.  
+For the strings the markup all started with the backslash character, 
+so '\n' is a newline, '\\' is backslash ....
+
+In html ``<`` and ``>`` have special meaning, 
+so if we want to *see* those symbols in the browser,
+we need a special substitute for the indiviidual characters.
+Those substitutes start with an ampersand (&) and end with a semicolon (;):
+
+  | ``<`` is replaced by &lt;
+  | ``>`` is replaced by &gt;
+  | ``&`` is replaced by &amp;
+  | a non-breaking space character is replaced by &nbsp;
+  
+The ``&nbsp;`` is printed like a normal space, 
+but is not considered as whitespace by the html formatter,
+so you can use it to force more than one space in sequence, 
+if really want to. 
+

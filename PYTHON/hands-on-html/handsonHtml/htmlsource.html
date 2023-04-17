@@ -1,0 +1,609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.4. HTML Source Markup &mdash; Hands-on Python Tutorial for Python 3</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <link rel="top" title="Hands-on Python Tutorial for Python 3" href="index.html" />
+    <link rel="up" title="5. Appendices" href="appendices.html" />
+    <link rel="prev" title="5.3. Some Special Mac Instructions" href="pythononmac.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pythononmac.html" title="5.3. Some Special Mac Instructions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" accesskey="U">5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="html-source-markup">
+<span id="index-0"></span><h1>5.4. HTML Source Markup<a class="headerlink" href="#html-source-markup" title="Permalink to this headline">¶</a></h1>
+<p>The section <a class="reference internal" href="webbasics.html"><em>Web page Basics</em></a> compares HTML format with
+other document formats.  Here we concentrate on HTML:
+Hypertext Markup Language.</p>
+<p>I use a convenient plain text editor, Sublime Text
+(free download at <a class="reference external" href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a>)
+that colors the syntax of html source, much as Idle colors Python syntax.
+This is an <em>advantage</em> over Kompozer.</p>
+<p>Unlike hybrid editors such as Kompozer, the editor only shows the raw HTML text,
+not the way it looks in a browser.
+With a plain text editor like this,
+you have a couple extra steps to look at the formatted view:
+You need to save the file, and separately load it into a browser.
+If you make a change to the html source,
+and want to see what that changes in the browser view,
+then you need to save the source file again,
+and then get the browser to <em>reload</em> the page.</p>
+<dl class="docutils" id="index-1">
+<dt><strong>Mac users &#8211; TextEdit</strong>:</dt>
+<dd><p class="first">You can also edit
+raw html with the included Mac app TextEdit,
+but with several steps to <em>change</em> the defaults.
+(The initial defaults are to show <em>no</em> html source.)
+Since TextEdit does not do syntax coloring,
+an editor like Sublime Text is likely better,
+as long as you do not mind doing one extra download.</p>
+<p>If you <em>do</em> want to
+use TextEdit to see and edit html source:</p>
+<ol class="last arabic simple">
+<li>Open TextEdit,</li>
+<li>Click on Help in the menu bar</li>
+<li>Select <em>TextEdit help page</em></li>
+<li>In the list that pops up, select &#8220;Work with HTML documents&#8221;.</li>
+<li>Follow the instructions in the section
+&#8220;Always open HTML files in code-editing mode&#8221;.</li>
+<li>As a beginner, I suggest these settings in the last help section,
+&#8220;Change how HTML files are saved&#8221;:<ul>
+<li>In 2. select  the CCS style &#8220;No CSS&#8221;.  Leave the defaults for document type and encoding.</li>
+<li>In 3. do <em>not</em> select preserve white space.</li>
+</ul>
+</li>
+</ol>
+</dd>
+</dl>
+<p>Now, for everyone, we get into the first simple example,
+the raw html for <code class="docutils literal"><span class="pre">hello.html</span></code>.
+This file is in the examples sub-folder www.</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Hello<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>A Simple Page<span class="nt">&lt;/h1&gt;</span>
+        Hello, 
+        world! <span class="nt">&lt;br&gt;</span>
+        It is a fine day.
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>You are encouraged to open it both in a plain text editor
+like Sublime Text or Mac TextEdit and in a browser.
+The other HTML files discussed here, are in the same folder,
+and you are encouraged to open them in the same two ways.</p>
+<p>With the html source text coloring in this tutorial.
+the only text that you will see in a browser&#8217;s usual formatted view
+is what appears as black in the image.
+Everything else is markup.  Markup tag names are boldface, and colored dark blue.
+Most of the markup appears inside angle brackets, and most
+markup has both an opening and a closing tag, with affected contents in between,
+like <code class="docutils literal"><span class="pre">&lt;title&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;/title&gt;</span></code> in line 4.  The closing tag has a <code class="docutils literal"><span class="pre">/</span></code>
+right after the <code class="docutils literal"><span class="pre">&lt;</span></code>.</p>
+<p>Much of the markup is boilerplate -
+I am not going to explain it much.</p>
+<p>In particular all the part through the opening tag for the body, &lt;body&gt;,
+in lines 1-7 is standard for our very simple pages,
+except for the bit in black, inside the title markup,
+on line 4.  The title text appears in the <em>tab label</em> in your browser,
+<em>not</em> inside the formatted page that appears in the browser.</p>
+<p>The only parts you actually see on the page are inside the body:
+here the body contents are in lines 8-11.</p>
+<p>You are likely to want to start with a heading.
+Line 8 uses the <code class="docutils literal"><span class="pre">&lt;h1&gt;</span></code> markup to create a main heading.</p>
+<p>I spaced the text in the body in a strange way, to illustrate
+a major feature of html: It reformats if you change the window width.
+That means the browser generally <em>chooses the places to wrap</em> to the next line.
+In particular <em>any amount of white space</em>, including newlines in your
+raw text, are merely treated as a place
+where <em>there could be a break to the next line</em>,
+or it could just display as a <em>single</em> space before the next word.</p>
+<p>Unless you have an extremely narrow window where you display
+hello.html in your browser, you should see &#8220;Hello, world!&#8221;
+all on one line.  That means the newline after &#8220;Hello,&#8221; in the source text
+and the blanks before &#8220;world&#8221;,
+just turn into a single space when displayed.</p>
+<p>Sometimes you want an explicit line break, that shows in the browser.
+The <code class="docutils literal"><span class="pre">&lt;br&gt;</span></code> markup forces a line break.
+(There are much more flexible ways to break to a new line,
+like using the paragraph tag, <code class="docutils literal"><span class="pre">&lt;p&gt;</span></code>, but we are keeping things simple here.)</p>
+<p>In hello.html, that means that no matter how wide your browser window is,
+you will always see &#8220;It is a fine day.&#8221;
+starting on a line <em>after</em> &#8220;Hello, world!&#8221;,
+because of the <code class="docutils literal"><span class="pre">&lt;br&gt;</span></code> on line 10.</p>
+<p>This compression of white space also means that I can indent
+to help me keep track of
+multi-line contents between opening and closing markup,
+and this does not change the html formatting.</p>
+<p>The final two lines 12-13 are also standard boilerplate,
+closing the tags that were started earlier
+for the body and the entire html section.</p>
+<p>There is plenty more formatting markup for fonts, text size,
+paragraphs, ...
+that is not discussed here.
+Common document editors like Microsoft
+Word and Open Office
+<em>do</em> allow you to generate static html files.
+However the source html text is NOT visible through these editors,
+and they all add lots of extra detailed formatting information in the html source
+that greatly lengthens the file and obscures the text that you do add.
+Also,
+such editors cannot handle html <em>forms</em>.</p>
+<p>For the exercises, I am expecting a pattern with output page templates.
+The templates are just static html files (that later get modified by the string format operation
+inside your Python program).</p>
+<p>An example is the output template for the adder programs: the initial testing program additionWeb.py and the later cgi server program adder.cgi.
+The template file is additionTemplate.html in the www examples folder:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>  
+        <span class="nt">&lt;title&gt;</span>Addition Answer<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+
+        <span class="nt">&lt;h1&gt;</span>Addition Answer<span class="nt">&lt;/h1&gt;</span>
+
+        The result is: <span class="nt">&lt;br&gt;</span>
+        {num1} + {num2} = {total}
+
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The text that is <em>not</em> inside tags is what you will see <em>if</em> this page is displayed directly in a browser,
+including the formatting instructions in curly braces.</p>
+<p>The Python adder programs do not display this page directly.  Instead they use it as a format string,
+so the substitutions into the curly braces are made before the page is displayed.</p>
+<div class="section" id="special-characters">
+<span id="index-2"></span><h2>5.4.1. Special characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<p>We had markup in Python string literal notation for special characters.
+For the strings the markup all started with the backslash character,
+so &#8216;\n&#8217; is a newline, &#8216;\\&#8217; is a displayed backslash ....</p>
+<p>In html <code class="docutils literal"><span class="pre">&lt;</span></code> and <code class="docutils literal"><span class="pre">&gt;</span></code> have special meaning,
+so if we want to <em>see</em> those symbols in the browser,
+we need a special substitute for the individual characters in the raw html.
+Those substitutes start with an ampersand (&amp;) and end with a semicolon (;),
+with an abbreviation in between:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">&lt;</span></code> is replaced by &amp;lt;</div>
+<div class="line"><code class="docutils literal"><span class="pre">&gt;</span></code> is replaced by &amp;gt;</div>
+<div class="line"><code class="docutils literal"><span class="pre">&amp;</span></code> is replaced by &amp;amp;</div>
+</div>
+</div></blockquote>
+<p>Since <code class="docutils literal"><span class="pre">&amp;</span></code> now is used specially for character markup, we need the <code class="docutils literal"><span class="pre">&amp;amp;</span></code>
+to <em>display</em> an ampersand in the browser.</p>
+<p>The collapsing of whitespace sequences is a feature of html.
+If you really want more spaces in sequence,
+you can use a character that looks like a space,
+but is not considered as whitespace by the html formatter.
+The character markup is <code class="docutils literal"><span class="pre">&amp;nbsp;</span></code> abbreviating
+Non-Breaking SPace.</p>
+<p>You can put arbitrary text, possibly with some special character codes,
+<em>outside</em> of tags, and it will be displayed for the user to see in a browser.</p>
+</div>
+<div class="section" id="html-form-markup">
+<span id="index-3"></span><h2>5.4.2. HTML Form Markup<a class="headerlink" href="#html-form-markup" title="Permalink to this headline">¶</a></h2>
+<p>For a page that is totally static,
+or just displaying output from a
+server cgi program, you do not need
+form syntax.
+However if you want the user to input data into
+a cgi program from a web page, then you need a form.
+Static document generation apps are no use here!</p>
+<p>First we introduce the basic syntax needed for
+the exercises.  <a class="reference internal" href="#advanced-tags"><span>More Advanced Form Input Tags (optional)</span></a>
+introduces further features that might be useful
+in a more elaborate project.</p>
+<p>Here is <code class="docutils literal"><span class="pre">adder.html</span></code>, from the examples sub-folder www:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+    <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Adder<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Fantastic Adder - Sum Two Numbers<span class="nt">&lt;/h1&gt;</span>  
+
+        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;adder.cgi&quot;</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span> <span class="na">enctype=</span><span class="s">&quot;multipart/form-data&quot;</span><span class="nt">&gt;</span>
+
+            Number 1: <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;x&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;60&quot;</span> <span class="na">size=</span><span class="s">&quot;60&quot;</span><span class="nt">&gt;</span> 
+            <span class="nt">&lt;br&gt;</span> <span class="nt">&lt;br&gt;</span>
+            Number 2: <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;y&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;60&quot;</span> <span class="na">size=</span><span class="s">&quot;60&quot;</span><span class="nt">&gt;</span> 
+            <span class="nt">&lt;br&gt;</span> <span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">value=</span><span class="s">&quot;Find Sum&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
+            
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>This page includes a simple form, lines 11-19.</p>
+<p>A form can only appear nested inside the body.
+Input tags can only appear inside the form.</p>
+<p>Unlike the opening markup for tags introduced so far,
+input tags include not only the tag name, but also <em>attributes</em>
+are inside the angle brackets after the tag.</p>
+<p>This is illustrated in line 11 for the form,
+with syntax coloring, with attribute assignments in light blue.</p>
+<p>Attributes have a standard format,
+with an attribute identifier and an equal sign
+and a double-quoted string.
+Attribute assignments are separated by whitespace.</p>
+<p>In line 11 the form attributes are <strong>action</strong>, <strong>method</strong> and <strong>enctype</strong>.
+We will not edit the attribute identifiers.
+The only things inside the opening tags that we will edit for new
+examples are the <em>contents of some of the quoted strings</em>.
+This way it is not important in this course
+for you to learn a bunch of html syntax.  You can copy models,
+and modify just data in quoted strings.</p>
+<p>The syntax for an attribute looks like a Python assignment statement,
+with the string on the right being the value assigned to the attribute.</p>
+<p>A form requires a further markup tag inside of it: <code class="docutils literal"><span class="pre">input</span></code>.</p>
+<p>Some confusion is possible here from the fact <strong>value</strong>
+is also the name of a required attribute for a input tag,
+and all attributes have a string assigned as their value.  I will try to use the phrase &#8220;string value&#8221; consistently for the second usage, and I will try to show the
+attribute names in boldface, so <strong>value</strong> refers to the attribute name used inside an input tag.
+Or I will show a full attribute assignment like <code class="docutils literal"><span class="pre">value=&quot;0&quot;</span></code>.</p>
+<p>The one form attribute that is important to modify correctly is
+the <strong>action</strong> attribute.  Its string value should be the server program
+that will act on the data coming from the inputs in the form.
+In this case that is adder.cgi.  Be sure you update this field
+when you copy to modify for a new page!</p>
+<p>The generic input tags used to get data in a form are
+like in lines 13 and 15.  Input tags do not have a closing tag.
+They typically have a separate label as part of the web page&#8217;s
+displayed text, like &#8220;Number 1:&#8221; and &#8220;Number 2:&#8221;.
+The browser shows a box for the user input.</p>
+<p>The important input attributes for us here are <strong>name</strong> and <strong>value</strong>.</p>
+<p>The initial <strong>value</strong> attribute string is what the user sees inside the input box
+when the page is first displayed.
+When the user changes the text in the box,
+it is remembered as a replacement <strong>value</strong> attribute&#8217;s string, to be later passed
+on to the cgi program.</p>
+<p>In order for the cgi program to know which <strong>value</strong> is which, the <strong>name</strong>
+attribute is used.  In cgi programs the form accessing methods like
+<code class="docutils literal"><span class="pre">getfirst</span></code> must have the first parameter match
+<em>the quoted string in the associated</em> <strong>name</strong> <em>attribute in the form</em>.
+For example, in a cgi file, the method call <code class="docutils literal"><span class="pre">form.getfirst('x')</span></code> makes sense
+<em>only</em> if there is an input tag in the html form page with attribute <code class="docutils literal"><span class="pre">name=&quot;x&quot;</span></code>
+(as we have in <code class="docutils literal"><span class="pre">adder.html</span></code>).</p>
+<p>Forms can have any number of input fields like these, distinguished in the cgi script by
+their <strong>name</strong> attribute.</p>
+<p>A form must always have exactly one special input tag like in line 17:
+The attributes here are somewhat different: <strong>value</strong> and <strong>type</strong>.
+The <strong>type</strong> attribute must be
+assigned the string <code class="docutils literal"><span class="pre">&quot;submit&quot;</span></code>.  With this <strong>type</strong>,
+the <strong>value</strong> attribute&#8217;s string does not appear in a user-editable input box.
+Instead it is the label text on the <em>submit button</em>.  When the user clicks
+on that button, the browser immediately sends all the form&#8217;s input
+to the cgi program given in the form&#8217;s <strong>action</strong> attribute .  Then the next page viewed
+in the browser is the one produced by the cgi program....</p>
+<p>This is all you really need if you just are going to get user data from
+text input fields, as in the Chapter 4 exercises.
+Between your form&#8217;s starting and ending tag,
+you can have any number of input tags with different <strong>name</strong>
+attributes values to record user text.
+You must have exactly one input tag in the form with <code class="docutils literal"><span class="pre">type=&quot;submit&quot;</span></code>.</p>
+</div>
+<div class="section" id="more-advanced-form-input-tags-optional">
+<span id="advanced-tags"></span><span id="index-4"></span><h2>5.4.3. More Advanced Form Input Tags (optional)<a class="headerlink" href="#more-advanced-form-input-tags-optional" title="Permalink to this headline">¶</a></h2>
+<p>You have probably seen other input and display mechanisms on web pages,
+like radio buttons and check boxes.</p>
+<p>You can see an example by running the pizza1.cgi URL in the optional Tutorial section
+ref:<cite>More-Advanced-Examples</cite>.</p>
+<p>The form here is created in the cgi program from a template page,
+<code class="docutils literal"><span class="pre">pizzaOrderTemplate1.html</span></code> in the examples sub-folder www,
+which shows the syntax that you can copy for input tags where the
+<strong>type</strong> attribute has string value &#8220;checkbox&#8221;, &#8220;radio&#8221;, or &#8220;hidden&#8221;:
+.</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Andy&#39;s Pizza<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+
+        <span class="nt">&lt;h1&gt;</span>Andy&#39;s Pizza<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;pizza.jpg&quot;</span> <span class="na">alt=</span><span class="s">&quot;pizza&quot;</span><span class="nt">&gt;</span>        
+        <span class="nt">&lt;h2&gt;</span>Online Ordering<span class="nt">&lt;/h2&gt;</span>        
+        {msg} <span class="nt">&lt;br&gt;</span>
+        {invitation} <span class="nt">&lt;br&gt;</span>
+        
+        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;pizza1.cgi&quot;</span><span class="nt">&gt;</span>
+            Your name <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;client&quot;</span> <span class="na">value=</span><span class="s">&quot;{client}&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;40&quot;</span> <span class="na">size=</span><span class="s">&quot;40&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;br&gt;&lt;br&gt;</span>
+            Select the size:<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;size&quot;</span> <span class="na">value=</span><span class="s">&quot;small&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span> 
+                Small: $5.50 plus $0.50 per topping<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;size&quot;</span> <span class="na">value=</span><span class="s">&quot;medium&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span>
+                Medium: $7.85 plus $0.75 per topping<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;size&quot;</span> <span class="na">value=</span><span class="s">&quot;large&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span>
+                Large: $10.50 plus $1.00 per topping<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;br&gt;</span>
+            Check desired toppings:<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;topping&quot;</span> <span class="na">value=</span><span class="s">&quot;pepperoni&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                Pepperoni<span class="nt">&lt;br&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;topping&quot;</span> <span class="na">value=</span><span class="s">&quot;sausage&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> 
+                Sausage<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;topping&quot;</span> <span class="na">value=</span><span class="s">&quot;onions&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> 
+                Onions<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;topping&quot;</span> <span class="na">value=</span><span class="s">&quot;mushrooms&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> 
+                Mushrooms<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;topping&quot;</span> <span class="na">value=</span><span class="s">&quot;extra cheese&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> 
+                Extra cheese<span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">value=</span><span class="s">&quot;Submit Pizza Order&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span> 
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;pastState&quot;</span> <span class="na">value=</span><span class="s">&quot;{state}&quot;</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span><span class="nt">&gt;&lt;br&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Radio buttons allow you to make a unique choice among multiple options in a group.
+If you click on one, and then another, the selection of the previous one is removed and the later one is noted instead.
+Lines 19, 21, and 23 show a group of radio buttons, with text after each one describing its meaning.
+They are radio buttons because of the attribute settings <code class="docutils literal"><span class="pre">type=&quot;radio&quot;</span></code>.
+They form a group, because the <strong>name</strong> attribute&#8217;s string value is the <em>same</em> for each. (In this case, name=&#8221;size&#8221;).
+The <strong>value</strong> of the chosen one is passed to the cgi program.
+When the cgi program calls <code class="docutils literal"><span class="pre">form.getfirst('size')</span></code>, just the string assigned to the selected input&#8217;s <strong>value</strong> attribute is returned.  Here it would be
+&#8216;small&#8217;, &#8216;medium&#8217; or &#8216;large&#8217;.</p>
+<p>If you want to allow multiple <em>simultaneous</em> selections from a group,
+use input tag attribute <code class="docutils literal"><span class="pre">type=&quot;checkbox&quot;</span></code>, as in lines 27, 29, 31, 33, and 35.
+Other than this new string value for the <strong>type</strong> attribute, the syntax in this tag is like for radio buttons, with distinct assignments to the <strong>value</strong> attribute.
+In the cgi program, however, you access the data differently:
+Read the results of a group of check boxes
+with the <code class="docutils literal"><span class="pre">getlist</span></code> method, that returns a <em>list</em> of the values of checked checkboxes.
+For instance if the user of this form checks for sausage, onions, and extra cheese,
+<code class="docutils literal"><span class="pre">form.getlist('topping')</span></code> returns <code class="docutils literal"><span class="pre">['sausage',</span> <span class="pre">'onions',</span> <span class="pre">'extra</span> <span class="pre">cheese']</span></code>.</p>
+<p id="index-5">Finally, there is a major complication when wanting to go back and forth,
+running a sequence of cgi programs, displaying
+a sequence of forms in between to get further user input.
+Even if you are running the same cgi program each time,
+each call the the cgi program is <em>independent</em>:
+Nothing is automatically remembered from the previous call the the cgi program.
+If you want to remember things defined in a previous call to a cgi program,
+then the output of the earlier cgi program
+can have a form with one or more input fields
+with <code class="docutils literal"><span class="pre">type=&quot;hidden&quot;</span></code>.</p>
+<p>Here &#8220;input&#8221; is not referring to <em>user</em> input in the form:
+<em>Nothing about this tag is visible to the user of the form.</em>
+The input is input <em>into the following cgi program</em> from the the form.
+It can be read in the cgi program
+via its <strong>value</strong> attribute, like a regular text box input.</p>
+<p>This syntax it pretty straightforward. Explaining its use
+in the cgi program <code class="docutils literal"><span class="pre">pizza1.cgi</span></code> is more involved:</p>
+<ol class="arabic simple">
+<li>The first time the cgi program is called directly with
+<code class="docutils literal"><span class="pre">http://localhost:8080/pizza1.cgi</span></code>.
+Then there was <em>not</em> a previous form feeding into it,
+so when this initial execution of the cgi program
+calls
+<code class="docutils literal"><span class="pre">form.getfirst('pastState',</span> <span class="pre">'')</span></code>,
+the default <code class="docutils literal"><span class="pre">''</span></code> is returned, indicating there was no earlier form,</li>
+<li>After testing this value in an if-statement,
+the cgi program chooses to <em>create</em> the form for an order.
+Note the braces various places in <code class="docutils literal"><span class="pre">pizzaOrderTemplate1.html</span></code>:  This
+is not a final html page.  It is used as a format string to create a page.
+The cgi program creates its output, which is a form,
+substituting <code class="docutils literal"><span class="pre">'order'</span></code> for <code class="docutils literal"><span class="pre">{state}</span></code> in line 40.
+This form is created and sent back to the user&#8217;s browser,
+so the hidden input
+field with <code class="docutils literal"><span class="pre">name=&quot;pastState&quot;</span></code> has <code class="docutils literal"><span class="pre">value=&quot;order&quot;</span></code>.</li>
+<li>In the browser, the user fills in the fields in the order form.
+The user does <em>not</em> see the hidden input field, but it is there.
+The user submits the form back to <code class="docutils literal"><span class="pre">pizza1.cgi</span></code>,
+so <code class="docutils literal"><span class="pre">pizza1.cgi</span></code> executes a <em>second</em> time.</li>
+<li>In the second execution of the cgi program, the call is made again:
+<code class="docutils literal"><span class="pre">form.getfirst('pastState',</span> <span class="pre">'')</span></code>
+and this time <code class="docutils literal"><span class="pre">'order'</span></code> is returned, since it was specified in the
+hidden field in the form.
+Hence the cgi program sees that
+there <em>was</em> a previous form.  Then the cgi program goes through the code to
+read the order fields and process the data to return a response page.</li>
+</ol>
+<p>There is a huge amount to learn about more elaborate HTML that we are omitting:
+All sort of formatting,
+form actions acted on within the browser via the programming language <em>javascript</em> (without server interaction),
+custom formatting rules via cascading style sheets (CSS), ....</p>
+<p>What we have in this tutorial appendix is sufficient to have simple pages interact with a server.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.4. HTML Source Markup</a><ul>
+<li><a class="reference internal" href="#special-characters">5.4.1. Special characters</a></li>
+<li><a class="reference internal" href="#html-form-markup">5.4.2. HTML Form Markup</a></li>
+<li><a class="reference internal" href="#more-advanced-form-input-tags-optional">5.4.3. More Advanced Form Input Tags (optional)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pythononmac.html"
+                        title="previous chapter">5.3. Some Special Mac Instructions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/htmlsource.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pythononmac.html" title="5.3. Some Special Mac Instructions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hands-on Python Tutorial</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="appendices.html" >5. Appendices</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2019, Dr. Andrew N. Harrington.
+      Last updated on Mar 19, 2020.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1+.
+    </div>
+  </body>
+</html>
